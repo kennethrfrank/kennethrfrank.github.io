@@ -1,5 +1,74 @@
 .App {
   text-align: center;
+  background-image: url("./bg.gif");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.wb{
+  border: white 2px;
+}
+a:hover{
+  color:#E2B74F;
+}
+
+.blackButton{
+  margin-left: 15%;
+  padding-top: 7px;
+  background-color: #020202 !important;
+  opacity: 88%;
+  font-weight: bolder;
+  border: 1px solid #E2B74F;
+  border-radius: 7px;
+  color: #E2B74F !important;
+  text-align: center;
+  height: 37px;
+  width: 75%;
+}
+.blackButton:hover{
+  background-color: #E2B74F!important;
+  color: white !important;
+}
+
+.theButtons{
+  text-align: center;
+}
+
+.navbar{
+  height: 120px;
+  color: #E2B74F;
+  font-weight: bold;
+}
+.tagline{
+  position: relative;
+  top: 25px;
+  right: 25px;
+  font-style: italic;
+  text-align: right;
+}
+
+.navbarColumn{
+  height: 100%;
+  text-align: right;
+}
+
+.NclyneLogo{
+  height: 60px;
+  position: relative;
+  left: 20%;
+  top: 25%;
+}
+
+.mainlinks{
+  color:#E2B74F;
+  padding-left: 30px;
+  text-align: center;
+  position: relative;
+  top: 68%;
+  right: 18%;
+  font-size: 5vmin;
+}
+.mainlinks:hover{
+  color:white;
 }
 
 .App-logo {
@@ -14,7 +83,9 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-image: url("./bg.gif");
+  background-position: center;
+  background-repeat: no-repeat;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -24,7 +95,7 @@
   color: white;
 }
 
-.App-link {
+.App-link { 
   color: #61dafb;
 }
 
