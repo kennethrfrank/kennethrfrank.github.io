@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   background-image: url("./bg.gif");
+  background-size: cover;
   background-color: #020202;
   background-position: center;
   background-repeat: no-repeat;
@@ -86,6 +87,7 @@ a:hover{
 .App-header {
   background-image: url("./bg.gif");
   background-color: #020202;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   min-height: 100vh;
