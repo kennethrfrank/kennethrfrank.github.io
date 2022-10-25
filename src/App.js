@@ -25,7 +25,7 @@ function App() {
                 <div className="blackButton" onClick="https://medium.com/nclyne">MEDIA</div>
               </Grid.Column>
               <Grid.Column className="theButtons">
-              <div className="blackButton" onClick="https://medium.com/nclyne">WORK</div>
+              <div className="blackButton" onClick="https://medium.com/nclyne">PROJECTS</div>
               </Grid.Column>
               <Grid.Column className="theButtons">
               <div className="blackButton" onClick="https://medium.com/nclyne">ABOUT</div>
@@ -33,19 +33,7 @@ function App() {
         </Grid.Row>
       </Grid>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src=App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <Button>Click Here</Button>
+
       </header>
 
       
