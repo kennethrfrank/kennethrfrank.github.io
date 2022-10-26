@@ -12,7 +12,34 @@
 a:hover{
   color:#E2B74F;
 }
+.slickSlider{
 
+
+
+  color:#ffffff;
+  height: 80vh;
+}
+
+
+.slick-dots li button {
+  border-radius: 20px !important;
+  color: #E2B74F !important;
+  opacity: 70% !important;
+  background-color: #E2B74F !important;
+  
+}
+.goldBG{
+  height: 200px;
+  width: 200px;
+  background-color: #E2B74F;
+  opacity: 20%;
+  color:#000000;
+  border: 2px solid black;
+  object-position: center;
+  object-fit: contain;
+
+
+}
 .blackButton{
   margin-left: 15%;
   padding-top: 7px;
@@ -84,20 +111,9 @@ a:hover{
   }
 }
 
-.App-header {
-  background-image: url("./bg.gif");
-  background-color: #020202;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+
+  
+
 
 .App-link { 
   color: #61dafb;
