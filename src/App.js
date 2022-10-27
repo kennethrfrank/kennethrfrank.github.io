@@ -4,7 +4,7 @@ import 'semantic-ui-css/semantic.min.css'
 import './App.css';
 import _ from 'lodash'
 import Slider from 'react-slick'
-import { Grid, Image, Button} from 'semantic-ui-react'
+import { Grid, Image, Button, Input} from 'semantic-ui-react'
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
@@ -25,7 +25,8 @@ class App extends Component{
         infinite: true,
         autoplay: true
       },
-      nfts: []
+      nfts: [],
+      nftSearch: ''
     };
 
     console.log(this.state.settings)
@@ -51,7 +52,8 @@ class App extends Component{
   render(){
     const nclyneNFTs = this.state.nfts.filter((nft)=>{
       if(nft.collection.external_url){
-      return nft.collection.external_url.includes('nclyne');
+        var putEmIn = nft.collection.external_url.includes('nclyne')&& (nft.name.toLocaleLowerCase().includes(this.state.nftSearch) || nft.description.toLocaleLowerCase().includes(this.state.nftSearch));
+      return putEmIn;
       }else{
         return false;
       }
@@ -82,6 +84,18 @@ class App extends Component{
           </Grid.Row>
           <Grid.Row>
             <Grid.Column className="slickSlider" width="14">
+              <Grid className="sliderFunctionality">
+                <Grid.Column width='16'>
+                  <Input fluid placeholder="Search Artists" onChange={
+                    (event)=>{
+                      const nftSearch = event.target.value.toLocaleLowerCase();
+                      this.setState(()=>{
+                        return { nftSearch };
+                      });
+                    }
+                  }/>
+                </Grid.Column>
+              </Grid>
                
               <Slider className='goldBG' {...this.state.settings}>
                 {nclyneNFTs.map((nft)=>{
