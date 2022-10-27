@@ -28,17 +28,53 @@ a:hover{
   background-color: #E2B74F !important;
   
 }
+
+.slick-prev, .slick-next {
+  border-radius: 20px !important;
+  
+}
+.slick-prev:before, .slick-next:before {
+
+  color: #E2B74F !important;
+
+}
+
 .goldBG{
-  height: 200px;
-  width: 200px;
-  background-color: #E2B74F;
-  opacity: 20%;
+  
+  background-color: rgba(226,183,79,.2);
   color:#000000;
-  border: 2px solid black;
-  object-position: center;
-  object-fit: contain;
+  border-radius:20px;
+}
+
+.whitebg{
+  border: 3px solid white;
+
+}
+.sliderContents{
+  margin-top: 15%;
+}
+img.visualContent{
+  border-radius: 10px;
+  opacity: 90%;
+}
 
 
+.artistDetails{
+  text-align: center;
+  font-size: 20px;
+  color: #FEFEFE;
+  outline: #020202;
+
+  
+}
+div.artistDetails{
+  position: relative;
+  left:2.9%;
+}
+p.artistDetails{
+  margin-top: 20px;
+  font-size: 10px;
+  color: #E2B74F;
 }
 .blackButton{
   margin-left: 15%;

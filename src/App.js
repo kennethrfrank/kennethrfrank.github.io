@@ -19,17 +19,31 @@ class App extends Component{
     this.state ={
       buttons: ["Media","Artists", "About"],
       settings: {
-        dots: true,
+        dots: false,
         slidesToShow: 1,
         slidesToScroll: 1,
-        infinite: false
-      }
+        infinite: true
+      },
+      nfts: []
     };
 
     console.log(this.state.settings)
 
   }
+  componentDidMount(){
 
+ 
+     fetch('https://api.opensea.io/api/v1/assets?owner=0x848AE001e8378A7409337453C1D8f5B779945578&order_direction=desc&limit=200&include_orders=false').then(response => response.json()).then((assets) => this.setState(
+           () => {
+ 
+             
+             return { nfts: assets.assets };
+           },
+           () => {
+             console.log(this.state);
+           },
+     ));
+   }
 
 
 
@@ -50,6 +64,7 @@ class App extends Component{
           </Grid.Row>
           <Grid.Row >
             {this.state.buttons.map((button)=>{
+              
               return(
                 <Grid.Column width="5" key={button} className="theButtons">
                   <div className="blackButton">{button}</div>
@@ -58,14 +73,36 @@ class App extends Component{
             })}
           </Grid.Row>
           <Grid.Row>
-            <Grid.Column className="slickSlider" width="16">
+            <Grid.Column className="slickSlider" width="14">
                
-              <Slider {...this.state.settings}>
-                <div key="1" className='goldBG'>
-                </div>
-                <div key="2" className='goldBG'>
-                  <img src={logo} height={"50px"}/>
-                </div>
+              <Slider className='goldBG' {...this.state.settings}>
+                {this.state.nfts.map((nft)=>{
+
+                  if(nft.collection.external_url != null){
+
+                  var isNclyneArtist = nft.collection.external_url.includes('nclyne');
+                if(isNclyneArtist){
+                return(
+                <Grid  key={nft.id}>
+                  
+                  <Grid.Row centered={true} className="sliderContents"> 
+                    <Grid.Column width="10">
+                    <Image className="visualContent" src={nft.image_url} fluid onClick="https://twitter.com"></Image>
+                    </Grid.Column>
+                  </Grid.Row>
+                  <Grid.Row >
+                    <Grid.Column width="16" className="artistDetails">
+                      {nft.name}
+                      <p className='artistDetails'>
+                        {nft.description}
+                      </p>
+                    </Grid.Column>
+                  </Grid.Row>
+                </Grid>
+                )}}
+                })}
+                
+
 
               </Slider>
             </Grid.Column>
