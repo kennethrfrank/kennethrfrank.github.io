@@ -22,7 +22,8 @@ class App extends Component{
         dots: false,
         slidesToShow: 1,
         slidesToScroll: 1,
-        infinite: true
+        infinite: true,
+        autoplay: true
       },
       nfts: []
     };
@@ -93,9 +94,15 @@ class App extends Component{
                   <Grid.Row >
                     <Grid.Column width="16" className="artistDetails">
                       {nft.name}
-                      <p className='artistDetails'>
-                        {nft.description}
-                      </p>
+                      <Grid centered={true}>
+                        <Grid.Column width="11">
+                         <p className='artistDetails'>
+                            {nft.description}
+                          </p>
+
+                        </Grid.Column>
+                      </Grid>
+                      
                     </Grid.Column>
                   </Grid.Row>
                 </Grid>

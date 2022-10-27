@@ -57,7 +57,10 @@ img.visualContent{
   border-radius: 10px;
   opacity: 90%;
 }
-
+body{
+  height:100vh;
+  background-color: #020202;
+}
 
 .artistDetails{
   text-align: center;
@@ -72,8 +75,8 @@ div.artistDetails{
   left:2.9%;
 }
 p.artistDetails{
-  margin-top: 20px;
-  font-size: 10px;
+  margin:25px;
+  font-size: 15px;
   color: #E2B74F;
 }
 .blackButton{
