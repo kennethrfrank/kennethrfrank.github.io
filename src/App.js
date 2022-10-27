@@ -49,6 +49,13 @@ class App extends Component{
 
 
   render(){
+    const nclyneNFTs = this.state.nfts.filter((nft)=>{
+      if(nft.collection.external_url){
+      return nft.collection.external_url.includes('nclyne');
+      }else{
+        return false;
+      }
+    });
     return (
       <div className="App">
         <Grid centered={true}>
@@ -77,18 +84,19 @@ class App extends Component{
             <Grid.Column className="slickSlider" width="14">
                
               <Slider className='goldBG' {...this.state.settings}>
-                {this.state.nfts.map((nft)=>{
+                {nclyneNFTs.map((nft)=>{
+                  console.log(nclyneNFTs);
+                  
 
-                  if(nft.collection.external_url != null){
-
-                  var isNclyneArtist = nft.collection.external_url.includes('nclyne');
-                if(isNclyneArtist){
+              
                 return(
                 <Grid  key={nft.id}>
                   
                   <Grid.Row centered={true} className="sliderContents"> 
                     <Grid.Column width="10">
-                    <Image className="visualContent" src={nft.image_url} fluid onClick="https://twitter.com"></Image>
+                    <Image className="visualContent" src={nft.image_url} fluid onClick={()=>{
+                      window.location.href(nft.permalink);
+                    }}></Image>
                     </Grid.Column>
                   </Grid.Row>
                   <Grid.Row >
@@ -106,7 +114,7 @@ class App extends Component{
                     </Grid.Column>
                   </Grid.Row>
                 </Grid>
-                )}}
+                )
                 })}
                 
 
