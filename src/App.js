@@ -1,14 +1,14 @@
 import logo from './logo.png'
 import { Component } from 'react'
-import 'semantic-ui-css/semantic.min.css'
+
 import './App.css';
 import _ from 'lodash'
 import Slider from 'react-slick'
-import { Grid, Image, Button, Input} from 'semantic-ui-react'
+
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
-
-
+import 'semantic-ui-css/semantic.min.css'
+import { Grid, Image, Button, Input, Header} from 'semantic-ui-react'
 
 
 class App extends Component{
@@ -58,6 +58,8 @@ class App extends Component{
         return false;
       }
     });
+
+
     return (
       <div className="App">
         <Grid centered={true}>
@@ -86,7 +88,7 @@ class App extends Component{
             <Grid.Column className="slickSlider" width="14">
               <Grid className="sliderFunctionality">
                 <Grid.Column width='16'>
-                  <Input fluid placeholder="Search Artists" onChange={
+                  <Input icon='search' className="searchArtists" fluid placeholder="Search Artists" onChange={
                     (event)=>{
                       const nftSearch = event.target.value.toLocaleLowerCase();
                       this.setState(()=>{
@@ -104,27 +106,26 @@ class App extends Component{
 
               
                 return(
-                <Grid  key={nft.id}>
+                <Grid key={nft.id} className="sliderGrid">
                   
-                  <Grid.Row centered={true} className="sliderContents"> 
-                    <Grid.Column width="10">
-                    <Image className="visualContent" src={nft.image_url} fluid onClick={()=>{
-                      window.location.href(nft.permalink);
+                  <Grid.Row stretched centered={true} className="sliderContents"> 
+                    <Grid.Column mobile="16" computer="8">
+                    <Image centered className="visualContent" src={nft.image_url} onClick={()=>{
+                      console.log("click");
+                      window.location.assign(nft.permalink);
                     }}></Image>
                     </Grid.Column>
-                  </Grid.Row>
-                  <Grid.Row >
-                    <Grid.Column width="16" className="artistDetails">
-                      {nft.name}
+                    <Grid.Column mobile="16" computer="8" className='artistDetailsRow'>
+                      <Header className='artistDetails'>{nft.name}</Header>
+                      
                       <Grid centered={true}>
-                        <Grid.Column width="11">
+                        <Grid.Column mobile="16" tablet="16" computer="16">
                          <p className='artistDetails'>
                             {nft.description}
                           </p>
 
                         </Grid.Column>
-                      </Grid>
-                      
+                        </Grid>
                     </Grid.Column>
                   </Grid.Row>
                 </Grid>

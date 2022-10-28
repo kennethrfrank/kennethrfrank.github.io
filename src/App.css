@@ -20,6 +20,22 @@ a:hover{
   height: 80vh;
 }
 
+.searchArtists > input {
+  border-radius: 90px !important;
+  border: 1.5px solid #E2B74F !important;
+  background-color: rgba(53, 37, 1, 0.8) !important;
+  color:#FEFEFE !important;
+  
+}
+::placeholder{
+color: #E2B74F !important;
+}
+.searchArtists > i {
+  color:#E2B74F !important;
+}
+.searchArtists{
+  margin-bottom: 15px;
+}
 
 .slick-dots li button {
   border-radius: 20px !important;
@@ -44,18 +60,25 @@ a:hover{
   background-color: rgba(226,183,79,.2);
   color:#000000;
   border-radius:20px;
+  max-height: 60vh;
+  position: relative;
 }
 
 .whitebg{
   border: 3px solid white;
 
 }
+
 .sliderContents{
-  margin-top: 15%;
+  margin-top: 50px;
 }
 img.visualContent{
   border-radius: 10px;
   opacity: 90%;
+ 
+  height: 250px;
+  width:auto;
+  margin-bottom: 25px;
 }
 body{
   height:100vh;
@@ -64,20 +87,36 @@ body{
 
 .artistDetails{
   text-align: center;
-  font-size: 20px;
-  color: #FEFEFE;
+  font-size: 18px;
+  
+
+  
   outline: #020202;
 
   
 }
+
 div.artistDetails{
-  position: relative;
-  left:2.9%;
+ 
+  margin-top: 40px;
+  border-radius: 20px;
+  text-shadow:3px 3px 3px #000000;
+
+  color: #E2B74F !important;
+
 }
 p.artistDetails{
   margin:25px;
   font-size: 15px;
-  color: #E2B74F;
+  max-height: 150px;
+  color: #FEFEFE;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  text-indent: 30px;
+  line-height: 25px;
+  text-align: left;
+  text-shadow:5px 5px 4px #000000;
+
 }
 .blackButton{
   margin-left: 15%;
