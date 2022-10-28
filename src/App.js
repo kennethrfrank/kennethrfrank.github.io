@@ -8,7 +8,7 @@ import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import 'semantic-ui-css/semantic.min.css'
-import { Grid, Image, Button, Input, Header} from 'semantic-ui-react'
+import { Grid, Image, Button, Input, Header, Segment} from 'semantic-ui-react'
 
 
 class App extends Component{
@@ -96,6 +96,20 @@ class App extends Component{
             <Grid.Column className="slickSlider" width="14">
               <Grid className="sliderFunctionality">
                 <Grid.Column width='16'>
+                <Segment className='curatedByNclyneSegment'>
+              <Header as='h2' className='curationProjectCopy'>
+                  Curated by Nclyne
+              </Header>
+              <Header sub  className='curationProjectCopy'>
+                  An art curation project introducing select creators to blockchain markets. 
+              </Header>
+              <Header sub  className='curationProjectCopy'>
+                  Each series is comissioned from a rising artist who receives 100% of the primary sales commision. 
+              </Header>
+              <Header sub  className='curationProjectCopy'>
+              Nclyne Artists & Collectors receive exclusive benefits within the platform.
+              </Header>
+              </Segment>
                   <Input icon='search' className="searchArtists" fluid placeholder="Search Artists" onChange={
                     (event)=>{
                       const nftSearch = event.target.value.toLocaleLowerCase();
@@ -106,6 +120,7 @@ class App extends Component{
                   }/>
                 </Grid.Column>
               </Grid>
+              
                
               <Slider className='goldBG' {...this.state.settings}>
                 {nclyneNFTs.map((nft)=>{
@@ -114,16 +129,16 @@ class App extends Component{
 
               
                 return(
-                <Grid container key={nft.id} className="sliderGrid">
+                <Grid key={nft.id} className="sliderGrid">
                   
                   <Grid.Row stretched centered={true} className={"nft"+nft.id+ " sliderContents"} > 
-                    <Grid.Column mobile="16" computer="8">
+                    <Grid.Column mobile="8" computer="8">
                     <Image centered className="visualContent" src={nft.image_url} onClick={()=>{
                       console.log("click");
                       window.location.assign(nft.permalink);
                     }}></Image>
                     </Grid.Column>
-                    <Grid.Column mobile="16" computer="8" className='artistDetailsRow'>
+                    <Grid.Column mobile="8" computer="8" className='artistDetailsRow'>
                       <Header className='artistDetails'>{nft.name}</Header>
                       
                       <Grid centered={true}>

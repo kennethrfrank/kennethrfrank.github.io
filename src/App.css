@@ -61,9 +61,23 @@ color: #E2B74F !important;
 
 }
 
+.curatedByNclyneSegment{
+  background-color: rgba(253, 243, 221, 0.69) !important;
+  border-radius: 20px !important;
+  
+  
+  border: none !important;
+}
+.curationProjectCopy{
+  color: #000000 !important;
+  text-shadow:1px 1px 1px #E2B74F;
+  text-align: center;
+
+}
+
 .goldBG{
   
-  background-color: rgba(226,183,79,.2);
+  background-color: rgba(226,183,79,.25);
   color:#000000;
   border-radius:20px;
   padding-bottom:50px;
@@ -76,13 +90,13 @@ color: #E2B74F !important;
 
 .sliderContents{
   margin-top: 50px;
+
 }
 img.visualContent{
   border-radius: 10px;
   opacity: 90%;
  
-  height: 250px;
-  width:auto;
+
   margin-bottom: 25px;
 }
 body{
@@ -140,11 +154,9 @@ p.artistDetails{
   background-color: #E2B74F!important;
   color: white !important;
 }
-.nft34156852{
-position: relative;
-right:2.5%;
-/*digitalLotus was positioned right for some reason, should probably update to mobile only*/
-}
+
+
+
 .sliderButton{
   background-color: #020202 !important;
   opacity: 88%;
@@ -160,7 +172,9 @@ right:2.5%;
 .theButtons{
   text-align: center;
 }
-
+.sliderGrid{
+  width:100% !important;
+}
 .navbar{
   height: 120px;
   color: #E2B74F;
@@ -212,6 +226,27 @@ right:2.5%;
 
 
   
+/*Screen 1000px or less*/
+@media only screen and (max-width:1000px) {
+  /*.nft34156852{
+    position: relative;
+    right:2.5%;
+    /*digitalLotus was positioned right for some reason, should probably update to mobile only
+    }*/
+    .sliderContents{
+
+  margin-left: 3%;
+}
+}
+@media only screen and (max-width: 600px){
+  img.visualContent{
+    height: 150px !important;
+  }
+  p.artistDetails{
+    display: none;
+  }
+
+}
 
 
 .App-link { 
