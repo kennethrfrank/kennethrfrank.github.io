@@ -5,6 +5,9 @@
   background-color: #020202;
   background-position: center;
   background-repeat: no-repeat;
+  height:120vh;
+  min-height:800px;
+  
 }
 .wb{
   border: white 2px;
@@ -17,7 +20,10 @@ a:hover{
 
 
   color:#ffffff;
-  height: 80vh;
+  
+}
+.slideAndSearch{
+  height: 80%;
 }
 
 .searchArtists > input {
@@ -60,8 +66,7 @@ color: #E2B74F !important;
   background-color: rgba(226,183,79,.2);
   color:#000000;
   border-radius:20px;
-  max-height: 60vh;
-  position: relative;
+  padding-bottom:50px;
 }
 
 .whitebg{
@@ -81,8 +86,8 @@ img.visualContent{
   margin-bottom: 25px;
 }
 body{
-  height:100vh;
-  background-color: #020202;
+ 
+  background-color: #020202 !important;
 }
 
 .artistDetails{
@@ -135,7 +140,23 @@ p.artistDetails{
   background-color: #E2B74F!important;
   color: white !important;
 }
-
+.nft34156852{
+position: relative;
+right:2.5%;
+/*digitalLotus was positioned right for some reason, should probably update to mobile only*/
+}
+.sliderButton{
+  background-color: #020202 !important;
+  opacity: 88%;
+  font-weight: bolder;
+  border: 1px solid #E2B74F !important;
+  border-radius: 7px;
+  color: #E2B74F !important;
+}
+.sliderButton:hover{
+  background-color: #E2B74F!important;
+  color: white !important;
+}
 .theButtons{
   text-align: center;
 }

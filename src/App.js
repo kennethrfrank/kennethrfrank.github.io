@@ -35,7 +35,8 @@ class App extends Component{
   componentDidMount(){
 
  
-     fetch('https://api.opensea.io/api/v1/assets?owner=0x848AE001e8378A7409337453C1D8f5B779945578&order_direction=desc&limit=200&include_orders=false').then(response => response.json()).then((assets) => this.setState(
+     fetch('https://api.opensea.io/api/v1/assets?owner=0x848AE001e8378A7409337453C1D8f5B779945578&order_direction=desc&limit=200&include_orders=false')
+     .then(response => response.json()).then((assets) => this.setState(
            () => {
  
              
@@ -52,7 +53,14 @@ class App extends Component{
   render(){
     const nclyneNFTs = this.state.nfts.filter((nft)=>{
       if(nft.collection.external_url){
-        var putEmIn = nft.collection.external_url.includes('nclyne')&& (nft.name.toLocaleLowerCase().includes(this.state.nftSearch) || nft.description.toLocaleLowerCase().includes(this.state.nftSearch));
+        var putEmIn = nft.collection.external_url
+        .includes('nclyne')
+        && (nft.name
+          .toLocaleLowerCase()
+          .includes(this.state.nftSearch) 
+        || nft.description
+          .toLocaleLowerCase()
+          .includes(this.state.nftSearch));
       return putEmIn;
       }else{
         return false;
@@ -61,8 +69,8 @@ class App extends Component{
 
 
     return (
-      <div className="App">
-        <Grid centered={true}>
+    
+        <Grid className = "App" centered={true}>
           <Grid.Row className="navbar">
   
             <Grid.Column width="8"  className="navbarColumn" floated="left">
@@ -84,7 +92,7 @@ class App extends Component{
               );
             })}
           </Grid.Row>
-          <Grid.Row>
+          <Grid.Row className="slideAndSearch">
             <Grid.Column className="slickSlider" width="14">
               <Grid className="sliderFunctionality">
                 <Grid.Column width='16'>
@@ -106,9 +114,9 @@ class App extends Component{
 
               
                 return(
-                <Grid key={nft.id} className="sliderGrid">
+                <Grid container key={nft.id} className="sliderGrid">
                   
-                  <Grid.Row stretched centered={true} className="sliderContents"> 
+                  <Grid.Row stretched centered={true} className={"nft"+nft.id+ " sliderContents"} > 
                     <Grid.Column mobile="16" computer="8">
                     <Image centered className="visualContent" src={nft.image_url} onClick={()=>{
                       console.log("click");
@@ -123,7 +131,14 @@ class App extends Component{
                          <p className='artistDetails'>
                             {nft.description}
                           </p>
-
+                          <Button fluid className="sliderButton" onClick={
+                            ()=>{
+                              window.location.assign(nft.permalink);
+                            }
+                          }> Support {nft.traits.map((trait)=>{
+                            if (trait.trait_type.includes("Artist")){
+                            return trait.value }
+                          })}</Button>
                         </Grid.Column>
                         </Grid>
                     </Grid.Column>
@@ -141,7 +156,7 @@ class App extends Component{
         
   
         
-      </div>
+    
     );
   }
 }
