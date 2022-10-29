@@ -3,13 +3,11 @@ import { Component } from 'react'
 
 import './App.css';
 import _ from 'lodash'
-import Slider from 'react-slick'
 
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
 import 'semantic-ui-css/semantic.min.css'
 import { Grid, Image, Button, Input, Header, Segment} from 'semantic-ui-react'
-
+import ContentSlider from './components/content-slider/content-slider.component';
+import SearchBox from './components/searchbox/search-box.component';
 
 class App extends Component{
 
@@ -18,13 +16,6 @@ class App extends Component{
 
     this.state ={
       buttons: ["Media","Artists", "About"],
-      settings: {
-        dots: false,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: true,
-        autoplay: true
-      },
       nfts: [],
       nftSearch: ''
     };
@@ -47,8 +38,14 @@ class App extends Component{
            },
      ));
    }
+ 
+onSearchChange = (event)=>{
+    const nftSearch = event.target.value.toLocaleLowerCase();
+    this.setState(()=>{
+      return { nftSearch };
+    })
 
-
+  };
 
   render(){
     const nclyneNFTs = this.state.nfts.filter((nft)=>{
@@ -67,6 +64,9 @@ class App extends Component{
       }
     });
 
+    const{onSearchChange}= this;
+    const {buttons} = this.state
+
 
     return (
     
@@ -83,7 +83,7 @@ class App extends Component{
             </Grid.Column>
           </Grid.Row>
           <Grid.Row >
-            {this.state.buttons.map((button)=>{
+            {buttons.map((button)=>{
               
               return(
                 <Grid.Column width="5" key={button} className="theButtons">
@@ -96,7 +96,10 @@ class App extends Component{
             <Grid.Column className="slickSlider" width="14">
               <Grid className="sliderFunctionality">
                 <Grid.Column width='16'>
-                <Segment className='curatedByNclyneSegment'>
+
+
+
+              <Segment className='curatedByNclyneSegment'>
               <Header as='h2' className='curationProjectCopy'>
                   Curated by Nclyne
               </Header>
@@ -110,61 +113,19 @@ class App extends Component{
               Nclyne Artists & Collectors receive exclusive benefits within the platform.
               </Header>
               </Segment>
-                  <Input icon='search' className="searchArtists" fluid placeholder="Search Artists" onChange={
-                    (event)=>{
-                      const nftSearch = event.target.value.toLocaleLowerCase();
-                      this.setState(()=>{
-                        return { nftSearch };
-                      });
-                    }
-                  }/>
+
+
+
+                  <SearchBox onChangeHandler={onSearchChange}/>
+
+
+
                 </Grid.Column>
               </Grid>
               
-               
-              <Slider className='goldBG' {...this.state.settings}>
-                {nclyneNFTs.map((nft)=>{
-                  console.log(nclyneNFTs);
-                  
-
-              
-                return(
-                <Grid key={nft.id} className="sliderGrid">
-                  
-                  <Grid.Row stretched centered={true} className={"nft"+nft.id+ " sliderContents"} > 
-                    <Grid.Column mobile="8" computer="8">
-                    <Image centered className="visualContent" src={nft.image_url} onClick={()=>{
-                      console.log("click");
-                      window.location.assign(nft.permalink);
-                    }}></Image>
-                    </Grid.Column>
-                    <Grid.Column mobile="8" computer="8" className='artistDetailsRow'>
-                      <Header className='artistDetails'>{nft.name}</Header>
-                      
-                      <Grid centered={true}>
-                        <Grid.Column mobile="16" tablet="16" computer="16">
-                         <p className='artistDetails'>
-                            {nft.description}
-                          </p>
-                          <Button fluid className="sliderButton" onClick={
-                            ()=>{
-                              window.location.assign(nft.permalink);
-                            }
-                          }> Support {nft.traits.map((trait)=>{
-                            if (trait.trait_type.includes("Artist")){
-                            return trait.value }
-                          })}</Button>
-                        </Grid.Column>
-                        </Grid>
-                    </Grid.Column>
-                  </Grid.Row>
-                </Grid>
-                )
-                })}
-                
+              <ContentSlider content={nclyneNFTs} />
 
 
-              </Slider>
             </Grid.Column>
           </Grid.Row>
         </Grid>

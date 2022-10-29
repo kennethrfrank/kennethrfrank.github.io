@@ -7,6 +7,7 @@
   background-repeat: no-repeat;
   height:120vh;
   min-height:800px;
+  font-family: 'RobotoSlab';
   
 }
 .wb{
@@ -30,11 +31,11 @@ a:hover{
   border-radius: 90px !important;
   border: 1.5px solid #E2B74F !important;
   background-color: rgba(53, 37, 1, 0.8) !important;
-  color:#FEFEFE !important;
+  color:#f8e6be!important;
   
 }
 ::placeholder{
-color: #E2B74F !important;
+color: #f8e6be !important;
 }
 .searchArtists > i {
   color:#E2B74F !important;
@@ -61,18 +62,33 @@ color: #E2B74F !important;
 
 }
 
+@font-face{
+  font-family: 'Multicolore';
+  src: url(./Multicolore.otf);
+}
+@font-face{
+  font-family: 'RobotoSlab';
+  src: url(./RobotoSlab-VariableFont_wght.ttf);
+}
 .curatedByNclyneSegment{
-  background-color: rgba(253, 243, 221, 0.69) !important;
+  background-color: rgba(0, 0, 0, 0.89) !important;
   border-radius: 20px !important;
   
+  border: 1px solid #E2B74F !important;
   
-  border: none !important;
+  
 }
 .curationProjectCopy{
-  color: #000000 !important;
-  text-shadow:1px 1px 1px #E2B74F;
+  color: #f8e6be!important;
+  text-shadow: -0.5px 0.5px 0.5px #f6f1e4;
   text-align: center;
+  letter-spacing: 2px;
+  font-family: 'multicolore' !important;
 
+
+}
+.sub.curationProjectCopy{
+  font-family: 'RobotoSlab' !important;
 }
 
 .goldBG{
@@ -120,7 +136,7 @@ div.artistDetails{
   margin-top: 40px;
   border-radius: 20px;
   text-shadow:3px 3px 3px #000000;
-
+  font-family: 'multicolore' !important;
   color: #E2B74F !important;
 
 }
@@ -128,13 +144,14 @@ p.artistDetails{
   margin:25px;
   font-size: 15px;
   max-height: 150px;
-  color: #FEFEFE;
+  color: #f8e6be;
   overflow-y: scroll;
   overflow-x: hidden;
   text-indent: 30px;
   line-height: 25px;
   text-align: left;
-  text-shadow:5px 5px 4px #000000;
+  text-shadow:1px 1px 0px #000000;
+  font-family: 'RobotoSlab';
 
 }
 .blackButton{
@@ -152,7 +169,7 @@ p.artistDetails{
 }
 .blackButton:hover{
   background-color: #E2B74F!important;
-  color: white !important;
+  color: #f8e6be !important;
 }
 
 
@@ -167,7 +184,7 @@ p.artistDetails{
 }
 .sliderButton:hover{
   background-color: #E2B74F!important;
-  color: white !important;
+  color: #f8e6be !important;
 }
 .theButtons{
   text-align: center;
@@ -210,7 +227,7 @@ p.artistDetails{
   font-size: 5vmin;
 }
 .mainlinks:hover{
-  color:white;
+  color:#f8e6be;
 }
 
 .App-logo {
