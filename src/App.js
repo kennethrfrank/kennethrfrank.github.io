@@ -73,24 +73,22 @@ class App extends Component {
     return (
 
       <Grid className="App" centered={true}>
+
         <LogoTagSiteStarter logo={logo} 
         tagline="Helping creators take the next step" />
+        {/* //Begins with GRID.ROW */}
+
         <CenteredButtons buttons={buttons} />
-        <Grid.Row className="slideAndSearch">
-          <Grid.Column className="slickSlider" width="14">
-            <Grid className="sliderFunctionality">
-              <Grid.Column width='16'>
+        {/* //Begins with GRID.ROW */}
+
+        <Grid.Row >
+          <Grid.Column width="13">
                 <ContentSegment />
                 <SearchBox onChangeHandler={onSearchChange} />
-              </Grid.Column>
-            </Grid>
-            <ContentSlider content={nclyneNFTs} />
+                <ContentSlider content={nclyneNFTs} />
           </Grid.Column>
         </Grid.Row>
       </Grid>
-
-
-
 
     );
   }

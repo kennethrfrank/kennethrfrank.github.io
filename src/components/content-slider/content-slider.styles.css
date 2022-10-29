@@ -1,0 +1,100 @@
+.sliderContainerStyling{
+  
+    background-color: rgba(226,183,79,.25);
+    color:#000000;
+    border-radius:20px;
+    
+   
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+ 
+  }
+
+
+ 
+
+  .visualContent{
+    min-height: 30vh !important;
+    background-size: contain !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    margin-bottom: 5% !important;
+  }
+ 
+
+  /* .sliderContents > img{
+    border-radius: 10px;
+    opacity: 95%;
+    margin-bottom: 10%;
+
+
+
+  } */
+  .artistDetails{
+    text-align: center;
+    font-size: 18px;
+    
+  
+    
+    outline: #020202;
+  
+    
+  }
+  div.artistDetails{
+ 
+
+    border-radius: 20px;
+    text-shadow:-1px .5px .25px #E2B74F !important;
+    font-family: 'multicolore' !important;
+    color: #f6f1e4 !important;
+    background: none !important;
+    border: none !important;
+
+  
+  }
+
+.segment.artistDetails::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+.segment.artistDetails{
+    -ms-overflow-style: none !important;  /* Internet Explorer 10+ */
+    scrollbar-width: none !important; 
+    font-size: 15px;
+    max-height: 30vh;
+    color: #f8e6be;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    text-indent: 30px;
+    line-height: 25px;
+    text-align: left;
+    text-shadow:1px 1px 0px #000000;
+    font-family: 'RobotoSlab' !important;
+    background-color: rgba(25, 18, 2, 0.415) !important;
+    padding:30px !important;
+  
+  }
+  
+
+.sliderButton{
+    background-color: #020202 !important;
+    opacity: 88%;
+    font-weight: bolder;
+    border: 1px solid #E2B74F !important;
+    border-radius: 7px;
+    color: #E2B74F !important;
+  }
+  .sliderButton:hover{
+    background-color: #E2B74F!important;
+    color: #f8e6be !important;
+  }
+
+
+
+  @media only screen and (max-width: 600px){
+
+   .segment.artistDetails{
+    font-size: 12px;
+   }
+  
+  }

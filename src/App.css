@@ -16,16 +16,7 @@
 a:hover{
   color:#E2B74F;
 }
-.slickSlider{
 
-
-
-  color:#ffffff;
-  
-}
-.slideAndSearch{
-  height: 80%;
-}
 
 .searchArtists > input {
   border-radius: 90px !important;
@@ -91,69 +82,23 @@ color: #f8e6be !important;
   font-family: 'RobotoSlab' !important;
 }
 
-.goldBG{
-  
-  background-color: rgba(226,183,79,.25);
-  color:#000000;
-  border-radius:20px;
-  padding-bottom:50px;
-}
+
 
 .whitebg{
   border: 3px solid white;
 
 }
 
-.sliderContents{
-  margin-top: 50px;
 
-}
-img.visualContent{
-  border-radius: 10px;
-  opacity: 90%;
- 
 
-  margin-bottom: 25px;
-}
 body{
- 
+ overflow-x: hidden;
   background-color: #020202 !important;
 }
 
-.artistDetails{
-  text-align: center;
-  font-size: 18px;
-  
 
-  
-  outline: #020202;
 
-  
-}
 
-div.artistDetails{
- 
-  margin-top: 40px;
-  border-radius: 20px;
-  text-shadow:3px 3px 3px #000000;
-  font-family: 'multicolore' !important;
-  color: #E2B74F !important;
-
-}
-p.artistDetails{
-  margin:25px;
-  font-size: 15px;
-  max-height: 150px;
-  color: #f8e6be;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  text-indent: 30px;
-  line-height: 25px;
-  text-align: left;
-  text-shadow:1px 1px 0px #000000;
-  font-family: 'RobotoSlab';
-
-}
 .blackButton{
   margin-left: 15%;
   padding-top: 7px;
@@ -174,24 +119,10 @@ p.artistDetails{
 
 
 
-.sliderButton{
-  background-color: #020202 !important;
-  opacity: 88%;
-  font-weight: bolder;
-  border: 1px solid #E2B74F !important;
-  border-radius: 7px;
-  color: #E2B74F !important;
-}
-.sliderButton:hover{
-  background-color: #E2B74F!important;
-  color: #f8e6be !important;
-}
 .theButtons{
   text-align: center;
 }
-.sliderGrid{
-  width:100% !important;
-}
+
 .navbar{
   height: 120px;
   color: #E2B74F;
@@ -250,18 +181,10 @@ p.artistDetails{
     right:2.5%;
     /*digitalLotus was positioned right for some reason, should probably update to mobile only
     }*/
-    .sliderContents{
-
-  margin-left: 3%;
-}
+ 
 }
 @media only screen and (max-width: 600px){
-  img.visualContent{
-    height: 150px !important;
-  }
-  p.artistDetails{
-    display: none;
-  }
+
 
 }
 

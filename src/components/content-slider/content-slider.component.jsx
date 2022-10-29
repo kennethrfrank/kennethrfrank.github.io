@@ -2,8 +2,9 @@ import{Component} from 'react';
 import 'semantic-ui-css/semantic.min.css'
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
-import {Grid, Image, Header, Button} from 'semantic-ui-react'
+import {Grid, Image, Header, Button, Segment} from 'semantic-ui-react'
 import Slider from 'react-slick'
+import './content-slider.styles.css'
 
 class ContentSlider extends Component{
     render(){
@@ -21,31 +22,48 @@ class ContentSlider extends Component{
 
         return(
                        
-        <Slider className='goldBG' {...settings}>
+        <Slider className='sliderContainerStyling' {...settings}>
         {content.map((item)=>{
           console.log();
           
 
       
         return(
-        <Grid key={item.id} className="sliderGrid">
-          
-          <Grid.Row stretched centered={true} className={"item"+item.id+ " sliderContents"} > 
-            <Grid.Column mobile="8" computer="8">
-            <Image centered className="visualContent" src={item.image_url} onClick={()=>{
-              console.log("click");
-              window.location.assign(item.permalink);
-            }}></Image>
+        <Grid key={item.id} verticalAlign='bottom' textAlign='center'>
+          <Grid.Row centered>
+            <Grid.Column width="12">
+            <Header attached="bottom" className='artistDetails'>{item.name}</Header>
+
             </Grid.Column>
-            <Grid.Column mobile="8" computer="8" className='artistDetailsRow'>
-              <Header className='artistDetails'>{item.name}</Header>
+
+          </Grid.Row>
+
+          <Grid.Row stretched centered={true} className={"item"+item.id}> 
+
+
+            <Grid.Column stretched tablet="7" computer="7" mobile="14"
+            className='visualContent' 
+            style={{backgroundImage: "url('"+item.image_url+"')"}} 
+            onClick={()=>{
+                console.log("click");
+                window.location.assign(item.permalink);
+              }}
+            >
+
+ 
+
+            </Grid.Column>
+
+           
+
+
+            <Grid.Column tablet="7" computer="7" mobile="14" className='artistDetailsRow'>
               
-              <Grid centered={true}>
-                <Grid.Column mobile="16" tablet="16" computer="16">
-                 <p className='artistDetails'>
+
+                 <Segment className='artistDetails'>
                     {item.description}
-                  </p>
-                  <Button fluid className="sliderButton" onClick={
+                  </Segment>
+                  <Button className="sliderButton" onClick={
                     ()=>{
                       window.location.assign(item.permalink);
                     }
@@ -53,8 +71,6 @@ class ContentSlider extends Component{
                     if (trait.trait_type.includes("Artist")){
                     return trait.value }
                   })}</Button>
-                </Grid.Column>
-                </Grid>
             </Grid.Column>
           </Grid.Row>
         </Grid>
