@@ -18,7 +18,7 @@ class App extends Component {
     super();
 
     this.state = {
-      buttons: ["Media", "Artists", "About"],
+      buttons: [],
       nfts: [],
       nftSearch: ''
     };
@@ -78,7 +78,7 @@ class App extends Component {
         tagline="Helping creators take the next step" />
         {/* //Begins with GRID.ROW */}
 
-        <CenteredButtons buttons={buttons} />
+        {/* <CenteredButtons buttons={buttons} /> */}
         {/* //Begins with GRID.ROW */}
 
         <Grid.Row >
