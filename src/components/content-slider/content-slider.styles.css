@@ -12,7 +12,9 @@
   }
 
 
- 
+ .sliderGrid{
+  margin-left: 2.5% !important;
+ }
 
   .visualContent{
     min-height: 30vh !important;
