@@ -12,9 +12,6 @@
   }
 
 
- .sliderGrid{
-  margin-left: 2.5% !important;
- }
 
   .visualContent{
     min-height: 30vh !important;
@@ -73,6 +70,7 @@
     text-shadow:1px 1px 0px #000000;
     font-family: 'RobotoSlab' !important;
     background-color: rgba(25, 18, 2, 0.415) !important;
+    border-radius:20px !important;
     padding:30px !important;
   
   }
@@ -98,5 +96,9 @@
    .segment.artistDetails{
     font-size: 12px;
    }
+   .sliderGrid{
+    margin-left: 2% !important;
+   }
+  
   
   }
