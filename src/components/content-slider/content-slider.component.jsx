@@ -29,7 +29,7 @@ class ContentSlider extends Component{
 
       
         return(
-        <Grid key={item.id} verticalAlign='bottom' textAlign='center' className='sliderGrid'>
+        <Grid key={item.id} verticalAlign='middle' textAlign='center' className='sliderGrid'>
           <Grid.Row centered>
             <Grid.Column width="12">
             <Header attached="bottom" className='artistDetails'>{item.name}</Header>
@@ -41,14 +41,26 @@ class ContentSlider extends Component{
           <Grid.Row stretched centered={true} className={"item"+item.id}> 
 
 
-            <Grid.Column stretched tablet="7" computer="7" mobile="14"
+            {/* <Grid.Column stretched tablet="8" computer="8" mobile="7"
             className='visualContent' 
             style={{backgroundImage: "url('"+item.image_url+"')"}} 
             onClick={()=>{
                 console.log("click");
                 window.location.assign(item.permalink);
               }}
+            ></Grid.Column> */}
+            <Grid.Column stretched tablet="7" computer="7" mobile="7"
+            className='visualContent' 
             >
+              <Image 
+              wrapped
+              src={item.image_url}
+              centered
+              onClick={()=>{
+                console.log("click");
+                window.location.assign(item.permalink);
+              }}
+              ></Image>
 
  
 
@@ -57,13 +69,19 @@ class ContentSlider extends Component{
            
 
 
-            <Grid.Column tablet="7" computer="7" mobile="14" className='artistDetailsRow'>
+            <Grid.Column stretched tablet="8" computer="8" mobile="7" className='artistDetailsRow'>
               
 
                  <Segment className='artistDetails'>
                     {item.description}
                   </Segment>
-                  <Button className="sliderButton" onClick={
+
+            </Grid.Column>
+          </Grid.Row>
+          
+          <Grid.Row centered>
+            <Grid.Column width="10">
+            <Button fluid className="sliderButton" onClick={
                     ()=>{
                       window.location.assign(item.permalink);
                     }
@@ -72,6 +90,7 @@ class ContentSlider extends Component{
                     return trait.value }
                   })}</Button>
             </Grid.Column>
+
           </Grid.Row>
         </Grid>
         )

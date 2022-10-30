@@ -60,18 +60,21 @@
     -ms-overflow-style: none !important;  /* Internet Explorer 10+ */
     scrollbar-width: none !important; 
     font-size: 15px;
-    max-height: 30vh;
-    color: #f8e6be;
+    color: #f8e6be !important;
     overflow-y: scroll;
     overflow-x: hidden;
     text-indent: 30px;
     line-height: 25px;
-    text-align: left;
-    text-shadow:1px 1px 0px #000000;
+    text-align: justify;
+    max-height: 31vh !important;
+    text-shadow:1px 1px 0px #000000 !important;
     font-family: 'RobotoSlab' !important;
     background-color: rgba(25, 18, 2, 0.415) !important;
-    border-radius:20px !important;
+    border-radius:7px !important;
     padding:30px !important;
+    position: relative;
+    bottom: 15px !important;
+   
   
   }
   
@@ -81,7 +84,7 @@
     opacity: 88%;
     font-weight: bolder;
     border: 1px solid #E2B74F !important;
-    border-radius: 7px;
+    border-radius: 14px !important;
     color: #E2B74F !important;
   }
   .sliderButton:hover{
@@ -90,15 +93,31 @@
   }
 
 
+.sliderGrid{
 
+   
+    overflow-y: hidden;
+
+}
   @media only screen and (max-width: 600px){
 
-   .segment.artistDetails{
-    font-size: 12px;
-   }
+
    .sliderGrid{
     margin-left: 2% !important;
    }
   
   
   }
+  @media only screen and (max-width: 720px){
+
+     .segment.artistDetails{
+     /* display: none; */
+     font-size: 8px;
+     width: 185px !important;
+     position: relative;
+     right: 15px;
+    } 
+  
+   
+   
+   }
