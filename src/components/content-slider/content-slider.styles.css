@@ -40,8 +40,8 @@
   .sliderImage > img{
     border-radius: 7px;
     -moz-box-shadow: 0 0 7px rgb(255, 224, 140);
--webkit-box-shadow: 0 0 7px rgb(255, 213, 87);
-box-shadow: 0px 0px 7px rgb(255, 196, 0);
+-webkit-box-shadow: 0 0 7px rgb(255, 229, 151);
+box-shadow: 0px 0px 7px rgb(255, 232, 156);
 
   }
 
