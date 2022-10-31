@@ -1,0 +1,15 @@
+.curationProjectCopy{
+    color: #E2B74F !important;
+    /* text-shadow: -0.75px 0.5px 0.5px #f6f1e4; */
+    text-align: center;
+    text-shadow: none;
+    letter-spacing: 2px;
+    font-family: 'multicolore' !important;
+  
+  
+  }
+  .sub.curationProjectCopy{
+    color: #f8e6be!important;
+    font-family: 'RobotoSlab' !important;
+    text-transform: none !important;
+  }

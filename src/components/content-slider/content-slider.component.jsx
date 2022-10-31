@@ -30,15 +30,15 @@ class ContentSlider extends Component{
       
         return(
         <Grid key={item.id} verticalAlign='middle' textAlign='center' className='sliderGrid'>
-          <Grid.Row centered>
-            <Grid.Column width="12">
-            <Header attached="bottom" className='artistDetails'>{item.name}</Header>
+          <Grid.Row centered verticalAlign='middle'>
+            <Grid.Column width="16">
+            <Header attached="bottom" className='sliderHeader'>{item.name}</Header>
 
             </Grid.Column>
 
           </Grid.Row>
 
-          <Grid.Row stretched centered={true} className={"item"+item.id}> 
+          <Grid.Row stretched centered={true} className={"item"+item.id} verticalAlign="middle"> 
 
 
             {/* <Grid.Column stretched tablet="8" computer="8" mobile="7"
@@ -49,18 +49,24 @@ class ContentSlider extends Component{
                 window.location.assign(item.permalink);
               }}
             ></Grid.Column> */}
-            <Grid.Column stretched tablet="7" computer="7" mobile="7"
+            <Grid.Column width="14"
             className='visualContent' 
+            verticalAlign='middle'
             >
               <Image 
               wrapped
               src={item.image_url}
               centered
+              verticalAlign='middle'
+              className='sliderImage'
               onClick={()=>{
                 console.log("click");
                 window.location.assign(item.permalink);
               }}
               ></Image>
+               <Segment attached="top" className='artistDetails'>
+                    {item.description}
+                </Segment>
 
  
 
@@ -69,18 +75,16 @@ class ContentSlider extends Component{
            
 
 
-            <Grid.Column stretched tablet="8" computer="8" mobile="7" className='artistDetailsRow'>
+            {/* <Grid.Column tablet="8" computer="8" mobile="15" className='artistDetailsRow'>
               
 
-                 <Segment className='artistDetails'>
-                    {item.description}
-                  </Segment>
+                
 
-            </Grid.Column>
+            </Grid.Column> */}
           </Grid.Row>
           
           <Grid.Row centered>
-            <Grid.Column width="10">
+            <Grid.Column width="14">
             <Button fluid className="sliderButton" onClick={
                     ()=>{
                       window.location.assign(item.permalink);

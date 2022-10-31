@@ -8,7 +8,19 @@
     position: relative;
     padding-bottom: 15px;
     margin-bottom: 25px;
+   
+    
+
  
+  }
+  .slick-track {
+    display: flex;
+  }
+  .slick-track .slick-slide {
+    display: flex;
+    height: auto;
+    align-items: center;
+    justify-content: center;
   }
 
 
@@ -18,8 +30,22 @@
     background-size: contain !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
-    margin-bottom: 5% !important;
+    
   }
+
+  .sliderImage{
+    display: flex !important;
+    align-items: center !important;
+  }
+  .sliderImage > img{
+    border-radius: 7px;
+    -moz-box-shadow: 0 0 7px rgb(255, 224, 140);
+-webkit-box-shadow: 0 0 7px rgb(255, 213, 87);
+box-shadow: 0px 0px 7px rgb(255, 196, 0);
+
+  }
+
+
  
 
   /* .sliderContents > img{
@@ -31,22 +57,21 @@
 
   } */
   .artistDetails{
-    text-align: center;
-    font-size: 18px;
-    
-  
-    
-    outline: #020202;
-  
+    text-align: center; 
     
   }
-  div.artistDetails{
+  .artistDetailsRow{
+   min-height: 10vh;
+  }
+  .sliderHeader{
  
-
+    text-align: center;
     border-radius: 20px;
-    text-shadow:-1px .5px .25px #E2B74F !important;
+    margin-top: 18px !important;
+    font-size: 21px !important;
     font-family: 'multicolore' !important;
-    color: #f6f1e4 !important;
+    color: #f8e6be !important;
+    text-shadow: 0.5px -0.5px 0px black !important;
     background: none !important;
     border: none !important;
 
@@ -59,21 +84,22 @@
 .segment.artistDetails{
     -ms-overflow-style: none !important;  /* Internet Explorer 10+ */
     scrollbar-width: none !important; 
-    font-size: 15px;
+    font-size: 20px;
     color: #f8e6be !important;
     overflow-y: scroll;
     overflow-x: hidden;
-    text-indent: 30px;
-    line-height: 25px;
+    
+    line-height: 20px;
     text-align: justify;
-    max-height: 31vh !important;
+    
     text-shadow:1px 1px 0px #000000 !important;
     font-family: 'RobotoSlab' !important;
     background-color: rgba(25, 18, 2, 0.415) !important;
     border-radius:7px !important;
+    border: none !important;
     padding:30px !important;
-    position: relative;
-    bottom: 15px !important;
+    max-height: 20vh ;
+   
    
   
   }
@@ -86,6 +112,8 @@
     border: 1px solid #E2B74F !important;
     border-radius: 14px !important;
     color: #E2B74F !important;
+    margin-top:15px !important;
+    margin-bottom: 15px !important;
   }
   .sliderButton:hover{
     background-color: #E2B74F!important;
@@ -93,31 +121,48 @@
   }
 
 
-.sliderGrid{
 
-   
-    overflow-y: hidden;
-
-}
-  @media only screen and (max-width: 600px){
-
-
-   .sliderGrid{
-    margin-left: 2% !important;
-   }
-  
-  
-  }
   @media only screen and (max-width: 720px){
 
      .segment.artistDetails{
      /* display: none; */
-     font-size: 8px;
-     width: 185px !important;
-     position: relative;
-     right: 15px;
+     font-size: 15px;
+     
+
     } 
+    .sliderGrid{
+    
+      margin-left: 0% !important;
+      overflow-y: hidden;
+      width:80vmin!important;
+      }
+     
+    /* .nft34156852{
+      position: relative;
+      right:2.5%;
+      digitalLotus was positioned right for some reason, should probably update to mobile only
+      } */
   
    
    
    }
+
+   .sliderGrid{
+    
+    
+    overflow-y: hidden;
+    }
+   
+   @media only screen and (min-width: 1000px){
+
+    .segment.artistDetails{
+    /* display: none; */
+    font-size: 25px;
+    line-height: 30px;
+    
+
+   } 
+ 
+  
+  
+  }

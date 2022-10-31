@@ -1,6 +1,7 @@
 import {Component} from 'react'
 import {Grid, Image} from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css'
+import './logo-tag-site-starter.styles.css'
 
 class LogoTagSiteStarter extends Component{
     render(){

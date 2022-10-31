@@ -1,6 +1,7 @@
 import { Component } from 'react'
 import { Segment, Header } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css'
+import './content-segment.styles.css'
 
 
 class ContentSegment extends Component {
