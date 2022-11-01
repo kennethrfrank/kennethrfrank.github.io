@@ -18,7 +18,22 @@ class App extends Component {
     super();
 
     this.state = {
-      buttons: [],
+      socials: [
+                  { platform: "game",
+                  link: "https://oncyber.io/nclyne"},
+                  { platform: "medium",
+                  link: "https://medium.com/nclyne"},
+                  { platform: "youtube",
+                  link: "https://www.youtube.com/channel/UCwZA4pIiYSJO9yrXOlcUMfQ"},
+                  { platform: "twitter",
+                  link: "https://twitter.com/nclynenft"},
+                  { platform: "instagram",
+                  link: "https://instagram.com/nclynenft"},
+                  { platform: "twitch",
+                  link: "https://www.twitch.tv/nclynenft"}
+                  
+                ],
+      buttons: ["Media", "About", "Team", "", "", "", ""],
       nfts: [],
       nftSearch: ''
     };
@@ -67,7 +82,7 @@ class App extends Component {
     });
 
     const { onSearchChange } = this;
-    const { buttons } = this.state
+    const { socials, buttons } = this.state
 
 
     return (
@@ -78,7 +93,7 @@ class App extends Component {
         tagline="Helping creators take the next step" />
         {/* //Begins with GRID.ROW */}
 
-        {/* <CenteredButtons buttons={buttons} /> */}
+        <CenteredButtons buttons={buttons} socials={socials}/>
         {/* //Begins with GRID.ROW */}
 
         <Grid.Row >

@@ -131,8 +131,7 @@ box-shadow: 0px 0px 7px rgb(255, 232, 156);
 
     } 
     .sliderGrid{
-    
-      margin-left: 0% !important;
+      margin-left:-2.25% !important;
       overflow-y: hidden;
       width:80vmin!important;
       }

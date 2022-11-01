@@ -93,25 +93,6 @@ color: #f8e6be !important;
 
 
 
-.blackButton{
-  margin-left: 15%;
-  padding-top: 7px;
-  background-color: #020202 !important;
-  opacity: 88%;
-  font-weight: bolder;
-  border: 1px solid #E2B74F;
-  border-radius: 7px;
-  color: #E2B74F !important;
-  text-align: center;
-  height: 37px;
-  width: 75%;
-}
-.blackButton:hover{
-  background-color: #E2B74F!important;
-  color: #f8e6be !important;
-}
-
-
 
 .theButtons{
   text-align: center;
