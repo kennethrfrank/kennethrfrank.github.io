@@ -15,7 +15,7 @@ body{
   text-align: center;
   
   
-  min-height:800px;
+  
   font-family: 'RobotoSlab';
   
 }
@@ -26,42 +26,6 @@ a:hover{
   color:#E2B74F;
 }
 
-
-.searchArtists > input {
-  border-radius: 90px !important;
-  border: 1.5px solid #E2B74F !important;
-  background-color: rgba(53, 37, 1, 0.8) !important;
-  color:#f8e6be!important;
-  
-}
-::placeholder{
-color: #f8e6be !important;
-}
-.searchArtists > i {
-  color:#E2B74F !important;
-}
-.searchArtists{
-  margin-bottom: 15px;
-}
-
-.slick-dots li button {
-  border-radius: 20px !important;
-  color: #E2B74F !important;
-  opacity: 70% !important;
-  background-color: #E2B74F !important;
-  
-}
-
-.slick-prev, .slick-next {
-  border-radius: 20px !important;
-  
-}
-.slick-prev:before, .slick-next:before {
-
-  color: #E2B74F !important;
-
-}
-
 @font-face{
   font-family: 'Multicolore';
   src: url(./Multicolore.otf);
@@ -70,16 +34,6 @@ color: #f8e6be !important;
   font-family: 'RobotoSlab';
   src: url(./RobotoSlab-VariableFont_wght.ttf);
 }
-.curatedByNclyneSegment{
-  background-color: rgba(0, 0, 0, 0.89) !important;
-  border-radius: 20px !important;
-  
-  border: 1px solid #E2B74F !important;
-  
-  
-}
-
-
 
 
 .whitebg{
@@ -116,12 +70,6 @@ color: #f8e6be !important;
   text-align: right;
 }
 
-.NclyneLogo{
-  height: 60px;
-  position: relative;
-  left: 20%;
-  top: 25%;
-}
 
 .mainlinks{
   color:#E2B74F;

@@ -4,16 +4,16 @@
   margin-left: 1% !important;
   background-color: #020202 !important;
   opacity: 88%;
-  border: 1px solid #E2B74F !important;
+  border: 1px solid rgba(255, 201, 75, 0.5) !important;
   border-radius: 7px;
-  color: #E2B74F !important;
+  color: #f8e6be !important;
  
   
 
 }
 .blackButton:hover{
   background-color: #E2B74F!important;
-  color: #f8e6be !important;
+  color: #050402 !important;
 }
 
 .blackButton > i{
@@ -22,7 +22,6 @@
    
     text-align: center !important;
 }
-
 
 
 .theButtons{
