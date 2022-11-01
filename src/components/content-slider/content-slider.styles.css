@@ -42,7 +42,7 @@
     -moz-box-shadow: 0 0 7px rgb(255, 224, 140);
 -webkit-box-shadow: 0 0 7px rgb(255, 229, 151);
 box-shadow: 0px 0px 7px rgb(255, 232, 156);
-
+max-height: 200px !important;
   }
 
 
@@ -58,6 +58,7 @@ box-shadow: 0px 0px 7px rgb(255, 232, 156);
   } */
   .artistDetails{
     text-align: center; 
+    display: none;
     
   }
   .artistDetailsRow{
@@ -165,10 +166,11 @@ box-shadow: 0px 0px 7px rgb(255, 232, 156);
    }
 
    .sliderGrid{
-    
+    margin-left:-1.5% !important;
     
     overflow-y: hidden;
     }
+
    
    @media only screen and (min-width: 1000px){
 

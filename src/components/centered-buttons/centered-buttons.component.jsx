@@ -14,7 +14,7 @@ class CenteredButtons extends Component{
               
               return(
                 <Grid.Column key={social.platform} className="theButtons" textAlign="center">
-                  <Button className="blackButton" href={social.link} icon={social.platform}></Button>
+                  <Button fluid className="blackButton" href={social.link} icon={social.platform}></Button>
                 </Grid.Column>
               );
             })}

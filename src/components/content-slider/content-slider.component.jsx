@@ -29,7 +29,7 @@ class ContentSlider extends Component{
 
       
         return(
-        <Grid key={item.id} verticalAlign='middle' textAlign='center' className='sliderGrid'>
+        <Grid key={item.id} verticalAlign='middle' textAlign='center' className={`sliderGrid nft${item.id}`}>
           <Grid.Row centered verticalAlign='middle'>
             <Grid.Column width="16">
             <Header attached="bottom" className='sliderHeader'>{item.name}</Header>

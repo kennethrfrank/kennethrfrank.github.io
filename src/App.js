@@ -35,7 +35,12 @@ class App extends Component {
                    link: "https://discord.com/invite/QXrYuwzM24"}
                   
                 ],
-      buttons: ["Media", "About", "Team", "", "", "", ""],
+      buttons: [{ platform: "Gallery",
+      link: "https://oncyber.io/nclyne"},
+      { platform: "Become an Nclyned Artist",
+      link: "https://medium.com/nclyne"},
+      { platform: "NFTs 101",
+      link: "https://www.youtube.com/channel/UCwZA4pIiYSJO9yrXOlcUMfQ"}],
       nfts: [],
       nftSearch: ''
     };
@@ -98,12 +103,25 @@ class App extends Component {
         <CenteredButtons buttons={buttons} socials={socials}/>
         {/* //Begins with GRID.ROW */}
 
-        <Grid.Row >
-          <Grid.Column width="13">
-                <ContentSegment />
-                <SearchBox onChangeHandler={onSearchChange} />
-                <ContentSlider content={nclyneNFTs} />
-          </Grid.Column>
+        <Grid.Row>
+
+                        <Grid.Column stretched mobile="13" tablet ="7" computer="7" verticalAlign='middle'>
+                          
+
+                          <ContentSegment />
+                          {/* <Grid>
+                          <CenteredButtons socials={buttons} />
+                          </Grid> */}
+                        
+
+                        </Grid.Column>
+                        <Grid.Column mobile="13" tablet ="7" computer="7">
+                        <SearchBox onChangeHandler={onSearchChange} />
+                              <ContentSlider content={nclyneNFTs} />
+                          
+                        </Grid.Column>
+
+
         </Grid.Row>
       </Grid>
 

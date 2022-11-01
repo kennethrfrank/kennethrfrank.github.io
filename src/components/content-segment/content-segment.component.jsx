@@ -9,7 +9,7 @@ class ContentSegment extends Component {
     render() {
         return (
 
-            <Segment className='curatedByNclyneSegment'>
+            <Segment stretched className='curatedByNclyneSegment'>
                 <Header as='h2' className='curationProjectCopy'>
                     Curated by Nclyne
                 </Header>
