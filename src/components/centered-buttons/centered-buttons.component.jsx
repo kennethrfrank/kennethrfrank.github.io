@@ -8,6 +8,7 @@ class CenteredButtons extends Component{
         const {buttons, socials} = this.props;
         return(
             <Grid.Row centered columns={socials.length} >
+              
             {socials.map((social)=>{
               
               return(
@@ -16,7 +17,9 @@ class CenteredButtons extends Component{
                 </Grid.Column>
               );
             })}
+            
           </Grid.Row>
+          
         )
     }
 }

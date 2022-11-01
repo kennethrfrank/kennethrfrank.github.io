@@ -30,7 +30,9 @@ class App extends Component {
                   { platform: "instagram",
                   link: "https://instagram.com/nclynenft"},
                   { platform: "twitch",
-                  link: "https://www.twitch.tv/nclynenft"}
+                  link: "https://www.twitch.tv/nclynenft"},
+                  { platform: "discord",
+                   link: "https://discord.com/invite/QXrYuwzM24"}
                   
                 ],
       buttons: ["Media", "About", "Team", "", "", "", ""],

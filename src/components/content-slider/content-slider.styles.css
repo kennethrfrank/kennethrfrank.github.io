@@ -120,6 +120,24 @@ box-shadow: 0px 0px 7px rgb(255, 232, 156);
     color: #f8e6be !important;
   }
 
+  .slick-dots li button {
+    border-radius: 20px !important;
+    color: #E2B74F !important;
+    opacity: 70% !important;
+    background-color: #E2B74F !important;
+    
+  }
+  
+  .slick-prev, .slick-next {
+    border-radius: 20px !important;
+    
+  }
+  .slick-prev:before, .slick-next:before {
+  
+    color: #E2B74F !important;
+  
+  }
+
 
 
   @media only screen and (max-width: 720px){

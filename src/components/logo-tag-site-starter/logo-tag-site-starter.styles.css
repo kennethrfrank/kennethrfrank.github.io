@@ -1,1 +1,18 @@
-.tagline{font-family: 'RobotoSlab' !important;}
+.tagline{
+    color: #f8e6be ;
+    opacity: 77%;
+    text-shadow:1px 1px 1px black ;
+    font-family: 'RobotoSlab' !important;
+    letter-spacing: 2px;
+    
+    font-size: 13px;
+}
+
+.NclyneLogo{
+    height: 60px;
+    position: relative;
+    left: 20%;
+    top: 25%;
+    opacity: 77%;
+  }
+  
