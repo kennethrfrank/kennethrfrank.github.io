@@ -11,6 +11,8 @@ import SearchBox from './components/searchbox/search-box.component';
 import CenteredButtons from './components/centered-buttons/centered-buttons.component';
 import ContentSegment from './components/content-segment/content-segment.component';
 import LogoTagSiteStarter from './components/logo-tag-site-starter/logo-tag-site-starter';
+import $ from 'jquery';
+
 
 class App extends Component {
 
@@ -123,6 +125,9 @@ class App extends Component {
 
 
         </Grid.Row>
+        {/* <Button onClick={()=>{
+          // $(".App").empty();
+        }}>Click</Button> */}
       </Grid>
 
     );
