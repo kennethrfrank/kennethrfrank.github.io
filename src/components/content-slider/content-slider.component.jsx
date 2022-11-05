@@ -13,7 +13,9 @@ const ContentSlider = ({content})=>{
             slidesToShow: 1,
             slidesToScroll: 1,
             infinite: true,
-            autoplay: true
+            autoplay: true,
+            autoplaySpeed: 9000
+            
   };
   return(
     <Slider className='sliderContainerStyling' {...settings}>
@@ -26,7 +28,6 @@ const ContentSlider = ({content})=>{
         <Grid key={item.id} verticalAlign='middle' textAlign='center' className={`sliderGrid nft${item.id}`}>
           <Grid.Row centered verticalAlign='middle'>
             <Grid.Column width="16">
-            <Header attached="bottom" className='sliderHeader'>{item.name}</Header>
 
             </Grid.Column>
 
@@ -58,6 +59,9 @@ const ContentSlider = ({content})=>{
                 window.location.assign(item.permalink);
               }}
               ></Image>
+              <Header attached="bottom" 
+              className='sliderHeader'>{item.name}</Header>
+
                <Segment attached="top" className='artistDetails'>
                     {item.description}
                 </Segment>
