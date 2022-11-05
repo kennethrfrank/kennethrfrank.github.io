@@ -44,7 +44,11 @@ a:hover{
 
 
 
-
+div.firstProject{
+  padding-top: 15px;
+  background-color: #020202b4 !important;
+  border-radius: 20px !important;
+}
 
 
 

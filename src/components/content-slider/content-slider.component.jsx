@@ -65,7 +65,14 @@ const ContentSlider = ({content})=>{
                <Segment attached="top" className='artistDetails'>
                     {item.description}
                 </Segment>
-
+                <Button fluid className="sliderButton" onClick={
+                    ()=>{
+                      window.location.assign(item.permalink);
+                    }
+                  }> Support {item.traits.map((trait)=>{
+                    if (trait.trait_type.includes("Artist")){
+                    return trait.value }
+                  })}</Button>
  
 
             </Grid.Column>
@@ -80,20 +87,7 @@ const ContentSlider = ({content})=>{
 
             </Grid.Column> */}
           </Grid.Row>
-          
-          <Grid.Row centered>
-            <Grid.Column width="14">
-            <Button fluid className="sliderButton" onClick={
-                    ()=>{
-                      window.location.assign(item.permalink);
-                    }
-                  }> Support {item.traits.map((trait)=>{
-                    if (trait.trait_type.includes("Artist")){
-                    return trait.value }
-                  })}</Button>
-            </Grid.Column>
 
-          </Grid.Row>
         </Grid>
         )
         })}
