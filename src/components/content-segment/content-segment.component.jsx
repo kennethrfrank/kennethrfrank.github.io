@@ -1,25 +1,44 @@
 import { Component } from 'react'
-import { Segment, Header } from 'semantic-ui-react'
+import { Segment, Header, Image } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css'
 import './content-segment.styles.css'
 
 
-const ContentSegment = ()=>{
+// const contentImage = require(promotion);
+
+const ContentSegment = ({segment})=>{
+
+    const placeimage = ()=>{
+        if(segment.img != null){
+            
+            console.log("t");
+            return(
+                <Image className="segmentImage" src={segment.img} onClick={
+                    ()=>{
+                        window.location.assign(segment.link);
+                    }
+                } />
+            );
+        }
+    };
+
+    console.log(segment);
     return (
 
-        <Segment stretched className='curatedByNclyneSegment'>
+        <Segment textAlign='center' className='curatedByNclyneSegment'>
             <Header as='h2' className='curationProjectCopy'>
-                Curated by Nclyne
+                {segment.title}
             </Header>
-            <Header sub className='curationProjectCopy'>
-                An art curation project introducing select creators to blockchain markets.
-            </Header>
-            <Header sub className='curationProjectCopy'>
-                Each series is comissioned from a rising artist who receives 100% of the primary sales commision.
-            </Header>
-            <Header sub className='curationProjectCopy'>
-                Nclyne Artists & Collectors receive exclusive benefits within the platform.
-            </Header>
+            {placeimage()}
+            
+            {segment.subCopy.map((copy)=>{
+                return(
+                    <Header sub className='curationProjectCopy'>
+                        {copy}
+                    </Header>
+                )
+            })}
+            
         </Segment>
     )
 }

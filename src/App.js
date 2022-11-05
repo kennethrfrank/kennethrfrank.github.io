@@ -42,6 +42,19 @@ const App = ()=>{
     link: "https://www.youtube.com/channel/UCwZA4pIiYSJO9yrXOlcUMfQ"}
     ]);
     const [nclyneNfts, setNclyneNfts] = useState(nfts);
+    const [curatedByNclyne, setSegment1] = useState(
+      {title: "Curated by Nclyne",
+       subCopy: ["An art curation project introducing select creators to blockchain markets.",
+     "Each limited series is a collaboration with a rising artist who receives 100% of the primary sales commision.", 
+    "Artists & collectors are granted access to exclusive resources and initiatives."],}
+    );
+    const [spaceLooters, setSegment2] = useState(
+      {title: "LILKOOL's SPACE LOOTERS",
+      img: 'looterspromo.gif',
+       subCopy: ["LIL Aliens obsessively collecting loot.",
+     "Web3 Access to KOOL art, fashion and experiences."],
+    link: "https://spacelooters.com"}
+    );
 
     useEffect(()=>{
       fetch('https://api.opensea.io/api/v1/assets?owner=0x848AE001e8378A7409337453C1D8f5B779945578&order_direction=desc&limit=200&include_orders=false')
@@ -87,10 +100,10 @@ const App = ()=>{
 
         <Grid.Row>
 
-                        <Grid.Column stretched mobile="13" tablet ="7" computer="7" verticalAlign='middle'>
+                        <Grid.Column mobile="13" tablet ="7" computer="7" textAlign='center'>
                           
-
-                          <ContentSegment />
+                        <ContentSegment segment={spaceLooters}/>
+                        
                           {/* <Grid>
                           <CenteredButtons socials={buttons} />
                           </Grid> */}
@@ -98,6 +111,7 @@ const App = ()=>{
 
                         </Grid.Column>
                         <Grid.Column mobile="13" tablet ="7" computer="7">
+                        <ContentSegment segment={curatedByNclyne}/>
                         <SearchBox onChangeHandler={onSearchChange} />
                               <ContentSlider content={nclyneNfts} />
                           

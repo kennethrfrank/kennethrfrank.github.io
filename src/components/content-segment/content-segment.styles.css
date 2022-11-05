@@ -5,6 +5,7 @@
     text-shadow: none;
     letter-spacing: 2px;
     font-family: 'multicolore' !important;
+    font-size: 24px !important;
   
   
   }
@@ -12,8 +13,10 @@
     color: #f8e6be!important;
     font-family: 'RobotoSlab' !important;
     text-transform: none !important;
+    font-size: 14px !important;
   }
   h2.curationProjectCopy{
+    
     letter-spacing: 7.77px !important;
   }
 
@@ -22,7 +25,12 @@
     border-radius: 20px !important;
     
     border: 1px solid rgba(255, 201, 75, 0.5) !important;
+    margin-bottom: 10px !important;
     
-    
+  }
+
+  .segmentImage{
+    border-radius: 15px !important;
+    display: inline-block !important;
   }
   
