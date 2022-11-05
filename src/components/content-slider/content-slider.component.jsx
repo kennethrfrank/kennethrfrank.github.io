@@ -6,23 +6,17 @@ import {Grid, Image, Header, Button, Segment} from 'semantic-ui-react'
 import Slider from 'react-slick'
 import './content-slider.styles.css'
 
-class ContentSlider extends Component{
-    render(){
 
-        const settings = {
-            dots: false,
+const ContentSlider = ({content})=>{
+    const settings = {
+    dots: false,
             slidesToShow: 1,
             slidesToScroll: 1,
             infinite: true,
             autoplay: true
-        };
-
-        const {content} = this.props;
-
-
-        return(
-                       
-        <Slider className='sliderContainerStyling' {...settings}>
+  };
+  return(
+    <Slider className='sliderContainerStyling' {...settings}>
         {content.map((item)=>{
           console.log();
           
@@ -99,8 +93,10 @@ class ContentSlider extends Component{
         </Grid>
         )
         })}
-      </Slider>)
-    };
+      </Slider>
+  )
 }
+
+
 
 export default ContentSlider;
