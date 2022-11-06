@@ -44,15 +44,14 @@ const App = ()=>{
     const [nclyneNfts, setNclyneNfts] = useState(nfts);
     const [curatedByNclyne, setSegment1] = useState(
       {title: "Curated by Nclyne",
-       subCopy: ["An experimental art project introducing select talent to blockchain markets.",
-     "Each limited series is a collaboration with a rising artist who receives 100% of the primary sales commision.", 
-    "Artists & collectors are granted priority access to exclusive resources and initiatives."],}
+       subCopy: ["An art initiative introducing select talent to blockchain markets.",
+     "Each limited series is in collaboration with a rising artist who receives 100% of the primary sales commission."],}
     );
     const [spaceLooters, setSegment2] = useState(
       {title: "LILKOOL's SPACE LOOTERS",
       img: 'looterspromo.gif',
        subCopy: ["LIL Aliens. Obsessively collecting loot.",
-     "Web3 Access to KOOL art, fashion and experiences."],
+     "Web3 access to KOOL art, fashion and experiences."],
     link: "https://spacelooters.com"}
     );
 
