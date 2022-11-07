@@ -100,6 +100,7 @@ const App = ()=>{
         <Grid.Row>
 
                         <Grid.Column mobile="13" tablet ="7" computer="7" textAlign='center'>
+                        {/* <div class="calendly-inline-widget" data-url="https://calendly.com/nclyne?background_color=000000&text_color=f8e6be&primary_color=e2b74f" style={{minWidth: "320px", height: "630px"}}></div> */}
                           
                         <ContentSegment segment={spaceLooters}/>
                         
