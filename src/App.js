@@ -1,11 +1,11 @@
 import logo from './logo.png'
 import { Component, useEffect, useState } from 'react'
-
+import ServiceModal from './components/service-modal/service-modal.component';
 import './App.css';
 import _ from 'lodash'
-
+import React from 'react';
 import 'semantic-ui-css/semantic.min.css'
-import { Grid, Image, Button, Input, Header, Segment } from 'semantic-ui-react'
+import { Grid, Image, Button, Input, Header, Segment, Modal } from 'semantic-ui-react'
 import ContentSlider from './components/content-slider/content-slider.component';
 import SearchBox from './components/searchbox/search-box.component';
 import CenteredButtons from './components/centered-buttons/centered-buttons.component';
@@ -54,6 +54,7 @@ const App = ()=>{
      "Web3 access to KOOL art, fashion and experiences."],
     link: "https://spacelooters.com"}
     );
+    const [open, setOpen] = useState(false);
 
     useEffect(()=>{
       fetch('https://api.opensea.io/api/v1/assets?owner=0x848AE001e8378A7409337453C1D8f5B779945578&order_direction=desc&limit=200&include_orders=false')
@@ -80,11 +81,14 @@ const App = ()=>{
     }, [nfts, searchField]);
 
 
+
+
     const onSearchChange = (event) => {
       const searchString = event.target.value.toLocaleLowerCase();
       setSearchField(searchString);
   
     };
+
 
     return(
 
@@ -100,8 +104,12 @@ const App = ()=>{
         <Grid.Row>
 
                         <Grid.Column mobile="13" tablet ="7" computer="7" textAlign='center'>
-                        {/* <div class="calendly-inline-widget" data-url="https://calendly.com/nclyne?background_color=000000&text_color=f8e6be&primary_color=e2b74f" style={{minWidth: "320px", height: "630px"}}></div> */}
-                          
+
+                        {/* MODAL */}
+                        
+                       
+
+                        <ServiceModal open={open} setOpen={setOpen}></ServiceModal>
                         <ContentSegment segment={spaceLooters}/>
                         
                           {/* <Grid>

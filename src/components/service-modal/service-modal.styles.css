@@ -1,0 +1,12 @@
+.modalButton{
+    background-color: #ffedcee5 !important;
+    color: #1d1502 !important;
+    border: 1px solid #e2b64fc1 !important;
+}
+
+.modalButton:hover{
+    background-color: #E2B74F !important;
+    color: #020200 !important;
+
+
+}

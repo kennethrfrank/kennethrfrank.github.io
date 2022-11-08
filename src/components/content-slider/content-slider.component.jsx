@@ -1,4 +1,3 @@
-import{Component} from 'react';
 import 'semantic-ui-css/semantic.min.css'
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
@@ -71,7 +70,9 @@ const ContentSlider = ({content})=>{
                     }
                   }> Support {item.traits.map((trait)=>{
                     if (trait.trait_type.includes("Artist")){
-                    return trait.value }
+                    return trait.value } else{
+                      return null
+                    }
                   })}</Button>
  
 
