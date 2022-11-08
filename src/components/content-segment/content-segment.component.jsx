@@ -4,6 +4,7 @@ import 'semantic-ui-css/semantic.min.css'
 import './content-segment.styles.css'
 
 
+
 // const contentImage = require(promotion);
 
 const ContentSegment = ({segment})=>{
