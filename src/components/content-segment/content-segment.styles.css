@@ -32,5 +32,6 @@
   .segmentImage{
     border-radius: 15px !important;
     display: inline-block !important;
+    max-height: 600px;
   }
   

@@ -1,4 +1,4 @@
-import useScript from '../../hooks/useScript';
+import useScript from '../../../hooks/useScript';
 import './calendly.styles.css'
 
 

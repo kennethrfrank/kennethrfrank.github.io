@@ -50,8 +50,8 @@ const App = ()=>{
     const [spaceLooters, setSegment2] = useState(
       {title: "LILKOOL's SPACE LOOTERS",
       img: 'looterspromo.gif',
-       subCopy: ["LIL Aliens. Obsessively collecting loot.",
-     "Web3 access to KOOL art, fashion and experiences."],
+       subCopy: ["LIL Aliens. Obsessively collecting loot.", 
+     "Web3 access to KOOL art, fashion and experiences.", "MINTING NOW!"],
     link: "https://spacelooters.com"}
     );
     const [open, setOpen] = useState(false);
@@ -109,7 +109,9 @@ const App = ()=>{
                         
                        
 
-                        <ServiceModal open={open} setOpen={setOpen}></ServiceModal>
+                        <ServiceModal open={open} setOpen={setOpen} type='calendar' callToAction='Book a Service'></ServiceModal>
+                        <ServiceModal open={open} setOpen={setOpen} type='mail' callToAction='Contact Us'></ServiceModal>
+
                         <ContentSegment segment={spaceLooters}/>
                         
                           {/* <Grid>
