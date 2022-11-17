@@ -12,6 +12,7 @@ import CenteredButtons from './components/centered-buttons/centered-buttons.comp
 import ContentSegment from './components/content-segment/content-segment.component';
 import LogoTagSiteStarter from './components/logo-tag-site-starter/logo-tag-site-starter';
 import $ from 'jquery';
+import { Route, Routes } from 'react-router-dom';
 
 const App = ()=>{
 
@@ -92,45 +93,48 @@ const App = ()=>{
 
     return(
 
-      <Grid className="App" centered={true}>
 
-        <LogoTagSiteStarter logo={logo} 
-        tagline="Helping creators take the next step" />
-        {/* //Begins with GRID.ROW */}
+        <Routes> 
+          <Route path='/' element={
+              <LogoTagSiteStarter logo={logo} 
+              tagline="Helping creators take the next step" 
+              buttons={buttons} socials={socials}/>
+          }/>
+        </Routes>
+       
 
-        <CenteredButtons buttons={buttons} socials={socials}/>
-        {/* //Begins with GRID.ROW */}
+        
 
-        <Grid.Row>
+        // <Grid.Row>
 
-                        <Grid.Column mobile="13" tablet ="7" computer="7" textAlign='center'>
+        //                 <Grid.Column mobile="13" tablet ="7" computer="7" textAlign='center'>
 
-                        {/* MODAL */}
+        //                 {/* MODAL */}
                         
                        
 
-                        <ServiceModal open={open} setOpen={setOpen}></ServiceModal>
-                        <ContentSegment segment={spaceLooters}/>
+        //                 <ServiceModal open={open} setOpen={setOpen}></ServiceModal>
+        //                 <ContentSegment segment={spaceLooters}/>
                         
-                          {/* <Grid>
-                          <CenteredButtons socials={buttons} />
-                          </Grid> */}
+        //                   {/* <Grid>
+        //                   <CenteredButtons socials={buttons} />
+        //                   </Grid> */}
                         
 
-                        </Grid.Column>
-                        <Grid.Column mobile="13" tablet ="7" computer="7" className='firstProject'>
-                        <ContentSegment segment={curatedByNclyne}/>
-                        <SearchBox onChangeHandler={onSearchChange} />
-                              <ContentSlider content={nclyneNfts} />
+        //                 </Grid.Column>
+        //                 <Grid.Column mobile="13" tablet ="7" computer="7" className='firstProject'>
+        //                 <ContentSegment segment={curatedByNclyne}/>
+        //                 <SearchBox onChangeHandler={onSearchChange} />
+        //                       <ContentSlider content={nclyneNfts} />
                           
-                        </Grid.Column>
+        //                 </Grid.Column>
 
 
-        </Grid.Row>
-        {/* <Button onClick={()=>{
-          // $(".App").empty();
-        }}>Click</Button> */}
-      </Grid>
+        // </Grid.Row>
+
+
+  
+ 
     )
 
 }//filterNFTs
