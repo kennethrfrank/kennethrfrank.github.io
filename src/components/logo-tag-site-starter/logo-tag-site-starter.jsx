@@ -9,13 +9,13 @@ const LogoTagSiteStarter = ({logo, tagline, buttons, socials})=>{
 
   return(
     <Fragment>
-        <Grid centered>
-          <Grid.Row className="navbar">
+        <Grid container centered className='topLogoRow'>
+          <Grid.Row className="">
 
-            <Grid.Column width="8"  className="navbarColumn" floated="left" vertialAlign='middle'>
+            <Grid.Column width="8"  className="" floated="left">
                <Link to="/"><Image className="NclyneLogo" src={logo}></Image></Link> 
             </Grid.Column>
-            <Grid.Column width="8" className="navbarColumn" floated="right">
+            <Grid.Column width="8" className="tagContainer" floated="right" textAlign='left'>
               <h4 className="tagline">
               {tagline}
               </h4>
