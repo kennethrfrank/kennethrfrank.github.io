@@ -12,7 +12,9 @@ import CenteredButtons from './components/centered-buttons/centered-buttons.comp
 import ContentSegment from './components/content-segment/content-segment.component';
 import LogoTagSiteStarter from './components/logo-tag-site-starter/logo-tag-site-starter';
 import $ from 'jquery';
+import Home from './components/routes/home/home.component'
 import { Route, Routes } from 'react-router-dom';
+import Projects from './components/routes/projects/projects.component';
 
 const App = ()=>{
 
@@ -80,7 +82,10 @@ const App = ()=>{
       }); 
       setNclyneNfts(processedNfts);
     }, [nfts, searchField]);
-
+     
+  const homeButtons = [{buttonName: "Projects", action: "projects"},
+  {buttonName: "Shop", action: "shopify", href: "https://nclyne.shop"},
+  {buttonName: "Consulting", action: "calendly", modal: true}, ];
 
 
 
@@ -99,38 +104,18 @@ const App = ()=>{
               <LogoTagSiteStarter logo={logo} 
               tagline="Helping creators take the next step" 
               buttons={buttons} socials={socials}/>
-          }/>
+          }>
+            <Route index element={<Home buttons={homeButtons} open={open} setOpen={setOpen}/>}/>
+            <Route path='projects' element={ <Projects spaceLooters={spaceLooters} 
+            curatedByNclyne={curatedByNclyne}
+            onSearchChange={onSearchChange}
+            nclyneNfts={nclyneNfts} />}/>
+          </Route>
         </Routes>
        
 
         
 
-        // <Grid.Row>
-
-        //                 <Grid.Column mobile="13" tablet ="7" computer="7" textAlign='center'>
-
-        //                 {/* MODAL */}
-                        
-                       
-
-        //                 <ServiceModal open={open} setOpen={setOpen}></ServiceModal>
-        //                 <ContentSegment segment={spaceLooters}/>
-                        
-        //                   {/* <Grid>
-        //                   <CenteredButtons socials={buttons} />
-        //                   </Grid> */}
-                        
-
-        //                 </Grid.Column>
-        //                 <Grid.Column mobile="13" tablet ="7" computer="7" className='firstProject'>
-        //                 <ContentSegment segment={curatedByNclyne}/>
-        //                 <SearchBox onChangeHandler={onSearchChange} />
-        //                       <ContentSlider content={nclyneNfts} />
-                          
-        //                 </Grid.Column>
-
-
-        // </Grid.Row>
 
 
   

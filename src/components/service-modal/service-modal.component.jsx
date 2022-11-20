@@ -9,11 +9,10 @@ const ServiceModal = ({open, setOpen})=>{
         onClose={()=> setOpen(false)}
         onOpen={()=> setOpen(true)}
         open = {open}
-        trigger={<Button className='modalButton' icon fluid><Icon name='calendar alternate'/> Book a Service</Button>}>
+        trigger={<Button className='blackHomeButton' fluid> Services </Button>}>
           <Modal.Content>
             <Calendly />
           </Modal.Content>
-
       </Modal>
     )
 }
