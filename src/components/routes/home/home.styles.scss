@@ -3,9 +3,9 @@
 
     background-color: #1C1911 !important;
     opacity: 87%;
-    border: 1px solid rgba(255, 201, 75, 0.5) !important;
+    border: .5px solid rgba(255, 201, 75, 0.25) !important;
     border-radius: 17px !important;
-    color: #E2B74F !important;
+    color: rgba(255, 201, 75, 0.62) !important;
     min-width: 40px;
     font-size: 21px!important;
     margin-top: 10px !important;
@@ -47,10 +47,13 @@
   }
 
   .homeCopy > div {
-    color: #ebd5adee !important;
-    letter-spacing: 3px;
+    color: #ebd5adc0 !important;
+    letter-spacing: 2.25px;
     line-height: 25px !important;
     font-family: 'Varela Round', sans-serif !important;
-    font-family: 'RobotoSlab' !important;
+    // font-family: 'RobotoSlab' !important;
     font-style: italic;
+    font-size: 18px !important;
+    text-shadow: #050402 2px 2px 2px;
+
   }

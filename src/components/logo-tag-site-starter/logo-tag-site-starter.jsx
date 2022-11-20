@@ -12,7 +12,7 @@ const LogoTagSiteStarter = ({logo, tagline, buttons, socials})=>{
         <Grid centered>
           <Grid.Row className="navbar">
 
-            <Grid.Column width="8"  className="navbarColumn" floated="left">
+            <Grid.Column width="8"  className="navbarColumn" floated="left" vertialAlign='middle'>
                <Link to="/"><Image className="NclyneLogo" src={logo}></Image></Link> 
             </Grid.Column>
             <Grid.Column width="8" className="navbarColumn" floated="right">
@@ -23,7 +23,7 @@ const LogoTagSiteStarter = ({logo, tagline, buttons, socials})=>{
             
           </Grid.Row>
           <CenteredButtons buttons={buttons} socials={socials}/>
-
+ 
         </Grid>
         <Outlet />
     </Fragment>

@@ -1,19 +1,19 @@
 .tagline{
     color: #f8e6be ;
-    opacity: 77%;
+    opacity: 57%;
     text-shadow:1px 1px 1px black ;
-    font-family: 'Varela Round' !important;
+    font-family: 'RobotoSlab' !important;
     letter-spacing: 2px;
     
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .NclyneLogo{
     height: 60px;
-    position: relative;
+    /* position: relative;
     left: 20%;
     top: 25%;
-    opacity: 77%;
+    opacity: 77%; */
   }
   @font-face{
     font-family: 'Multicolore';
