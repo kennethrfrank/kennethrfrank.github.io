@@ -3,17 +3,17 @@
   "name": "Nclyne - Talent Rolodex",
   "icons": [
     {
-      "src": "YellowNclyneLogo.png",
+      "src": "YellowNclyneLogo.svg",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "YellowNclyneLogo.png",
+      "src": "YellowNclyneLogo.svg",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "YellowNclyneLogo.png",
+      "src": "YellowNclyneLogo.svg",
       "type": "image/png",
       "sizes": "512x512"
     }
