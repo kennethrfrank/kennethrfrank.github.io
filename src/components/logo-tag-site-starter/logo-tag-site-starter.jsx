@@ -22,9 +22,9 @@ const LogoTagSiteStarter = ({logo, tagline, buttons, socials})=>{
             </Grid.Column>
             
           </Grid.Row>
-          <CenteredButtons buttons={buttons} socials={socials}/>
  
         </Grid>
+        <CenteredButtons buttons={buttons} socials={socials}/>
         <Outlet />
     </Fragment>
 )
