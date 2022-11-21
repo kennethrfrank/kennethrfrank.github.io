@@ -34,6 +34,12 @@ const Projects = ({spaceLooters, curatedByNclyne, onSearchChange, nclyneNfts}) =
 
 
             </Grid.Row>
+            {/* <Grid.Row>
+                <Grid.Column width='16'>
+                <iframe style={{width: '100%', height: '100vh'}} src='https://oncyber.io/nclyne'></iframe>
+
+                </Grid.Column>
+            </Grid.Row> */}
         </Grid>
 
     );

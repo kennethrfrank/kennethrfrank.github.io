@@ -9,7 +9,7 @@ const LogoTagSiteStarter = ({logo, tagline, buttons, socials})=>{
 
   return(
     <Fragment>
-        <Grid container centered className='topLogoRow'>
+        <Grid centered className='topLogoRow'>
           <Grid.Row className="">
 
             <Grid.Column width="8"  className="" floated="left">

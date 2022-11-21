@@ -8,7 +8,7 @@ const Home = ({buttons, open, setOpen})=>{
     return(
     <Grid container >
     <Grid.Row centered className="homeContentContainer">
-        <Grid.Column className='homeContainer' width ="15" verticalAlign='middle'>
+        <Grid.Column className='homeContainer' width ="14" verticalAlign='middle'>
           <Header textAlign='left' className='logoText' verticalAlign='middle'> <img src={blackLogo}></img></Header>
 
           <Segment className='homeCopy'>
