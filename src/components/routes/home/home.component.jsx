@@ -6,8 +6,8 @@ import ServiceModal from "../../service-modal/service-modal.component";
 
 const Home = ({buttons, open, setOpen})=>{
     return(
-    <Grid container centered >
-    <Grid.Row  className="homeContentContainer">
+    <Grid container >
+    <Grid.Row centered className="homeContentContainer">
         <Grid.Column className='homeContainer' width ="15" verticalAlign='middle'>
           <Header textAlign='left' className='logoText' verticalAlign='middle'> <img src={blackLogo}></img></Header>
 
