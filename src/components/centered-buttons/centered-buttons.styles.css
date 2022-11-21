@@ -11,6 +11,7 @@
   
 
 }
+
 .blackButton:hover{
   background-color: #E2B74F!important;
   color: #050402 !important;
@@ -23,6 +24,9 @@
     text-align: center !important;
 }
 
+.socialButtons{
+  margin-bottom: 15px;
+}
 
 .theButtons{
   text-align: center;

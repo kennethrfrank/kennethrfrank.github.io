@@ -27,8 +27,8 @@ import './centered-buttons.styles.css'
 
 const CenteredButtons = ({socials}) => {
 return(
-  <Grid>
-    <Grid.Row centered columns={socials.length + 1} >
+  <Grid className='topLogoRow'>
+    <Grid.Row centered columns={socials.length + 1} className="socialButtons">
 
 
       {socials.map((social) => {

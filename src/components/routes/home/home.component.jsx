@@ -6,9 +6,9 @@ import ServiceModal from "../../service-modal/service-modal.component";
 
 const Home = ({buttons, open, setOpen})=>{
     return(
-    <Grid container >
+    <Grid className="homeContainer" >
     <Grid.Row centered className="homeContentContainer">
-        <Grid.Column className='homeContainer' width ="14" verticalAlign='middle'>
+        <Grid.Column  width ="14" verticalAlign='middle'>
           <Header textAlign='left' className='logoText' verticalAlign='middle'> <img src={blackLogo}></img></Header>
 
           <Segment className='homeCopy'>
