@@ -8,7 +8,7 @@ const Home = ({buttons, open, setOpen})=>{
     return(
     <Grid className="homeContainer" >
     <Grid.Row centered className="homeContentContainer">
-        <Grid.Column  width ="14" verticalAlign='middle'>
+        <Grid.Column  mobile= "14" tablet={7} computer={7} verticalAlign='middle'>
           <Header textAlign='left' className='logoText' verticalAlign='middle'> <img src={blackLogo}></img></Header>
 
           <Segment className='homeCopy'>

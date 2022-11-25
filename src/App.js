@@ -7,6 +7,7 @@ import LogoTagSiteStarter from './components/logo-tag-site-starter/logo-tag-site
 import Home from './components/routes/home/home.component'
 import { Route, Routes } from 'react-router-dom';
 import Projects from './components/routes/projects/projects.component';
+import Gallery from './components/routes/gallery/gallery.component';
 
 const App = ()=>{
 
@@ -71,7 +72,8 @@ const App = ()=>{
      
   const homeButtons = [{buttonName: "Projects", action: "projects"},
   {buttonName: "Shop", action: "shopify", href: "https://nclyne.shop"},
-  {buttonName: "Consulting", action: "calendly", modal: true}, ];
+  {buttonName: "Consulting", action: "calendly", modal: true}, 
+ {buttonName: "Gallery", action: "gallery"}];
 
 
 
@@ -96,6 +98,7 @@ const App = ()=>{
             curatedByNclyne={curatedByNclyne}
             onSearchChange={onSearchChange}
             nclyneNfts={nclyneNfts} />}/>
+            <Route path="gallery" element={<Gallery />}/>
           </Route>
         </Routes>
        
