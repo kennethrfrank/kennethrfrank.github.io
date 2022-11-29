@@ -8,9 +8,10 @@ import Home from './components/routes/home/home.component'
 import { Route, Routes } from 'react-router-dom';
 import Projects from './components/routes/projects/projects.component';
 import Gallery from './components/routes/gallery/gallery.component';
+import Shop from './components/routes/shop/shop.component';
+import $ from 'jquery'
 
 const App = ()=>{
-
     const [searchField, setSearchField] = useState('');
     const [nfts, setNfts] = useState([]);
     const socials = [
@@ -46,6 +47,19 @@ const App = ()=>{
 
     const [open, setOpen] = useState(false);
 
+    const[shopifyActive, setShopifyActive] = useState(false);
+    const[shopifyStyle, setShopifyStyle] = useState({display: "none"});
+
+    useEffect(()=>{
+      if(shopifyActive){
+        console.log('UE: shopify is active');
+        $(".shopify-buy-frame > iframe").slideDown();
+      }else{
+        console.log("UE: shopify is inactive");
+        $(".shopify-buy-frame > iframe").slideUp();
+      }
+    }, [shopifyActive]);
+
     useEffect(()=>{
       fetch('https://api.opensea.io/api/v1/assets?owner=0x848AE001e8378A7409337453C1D8f5B779945578&order_direction=desc&limit=200&include_orders=false')
       .then(response => response.json()).then((assets) => setNfts(assets.assets));
@@ -69,9 +83,11 @@ const App = ()=>{
       }); 
       setNclyneNfts(processedNfts);
     }, [nfts, searchField]);
+
+  
      
   const homeButtons = [{buttonName: "Projects", action: "projects"},
-  {buttonName: "Shop", action: "shopify", href: "https://nclyne.shop"},
+  {buttonName: "Shop", action: "shopify"},
   {buttonName: "Consulting", action: "calendly", modal: true}, 
  {buttonName: "Gallery", action: "gallery"}];
 
@@ -82,6 +98,7 @@ const App = ()=>{
       setSearchField(searchString);
   
     };
+    $(".shopify-buy-frame > iframe").slideUp();
 
 
     return(
@@ -91,21 +108,23 @@ const App = ()=>{
           <Route path='/' element={
               <LogoTagSiteStarter logo={logo} 
               tagline="Helping creators take the next step" 
-              socials={socials}/>
+              socials={socials} setShopifyActive={setShopifyActive}/>
           }>
-            <Route index element={<Home buttons={homeButtons} open={open} setOpen={setOpen}/>}/>
+            <Route index element={<Home buttons={homeButtons} open={open} setOpen={setOpen} setShopifyActive={setShopifyActive}/>}/>
             <Route path='projects' element={ <Projects spaceLooters={spaceLooters} 
             curatedByNclyne={curatedByNclyne}
             onSearchChange={onSearchChange}
             nclyneNfts={nclyneNfts} />}/>
             <Route path="gallery" element={<Gallery />}/>
+            <Route path="shop" element={<Shop shopifyStyle={shopifyStyle}/>}/>
           </Route>
+        
         </Routes>
        
 
         
 
-
+      
 
   
  

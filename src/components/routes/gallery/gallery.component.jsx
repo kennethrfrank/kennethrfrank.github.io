@@ -1,10 +1,11 @@
 import { Grid } from "semantic-ui-react";
+import './gallery.styles.scss';
 
 const Gallery = () =>{
     return(
         <Grid centered>
             <Grid.Column width={15}>
-                <iframe src="http://nclyne.gallery" style={{height:"80vh", width: "100%", marginTop: "20px"}}>
+                <iframe className="onCyberGallery" src="https://oncyber.io/nclyne">
 
                 </iframe>
             </Grid.Column>

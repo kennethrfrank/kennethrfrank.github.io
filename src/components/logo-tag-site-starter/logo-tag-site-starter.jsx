@@ -5,7 +5,7 @@ import './logo-tag-site-starter.styles.css'
 import CenteredButtons from '../centered-buttons/centered-buttons.component'
 import {Outlet, Link} from 'react-router-dom';
 
-const LogoTagSiteStarter = ({logo, tagline, buttons, socials})=>{
+const LogoTagSiteStarter = ({logo, tagline, buttons, socials, setShopifyActive})=>{
 
   return(
     <Fragment>
@@ -13,7 +13,9 @@ const LogoTagSiteStarter = ({logo, tagline, buttons, socials})=>{
           <Grid.Row className="logoAndTag">
 
             <Grid.Column width="8"  className="" floated="left">
-               <Link to="/"><Image className="NclyneLogo" src={logo}></Image></Link> 
+               <Link to="/"><Image className="NclyneLogo" src={logo} onClick={()=>{
+                setShopifyActive(false);
+               }}></Image></Link> 
             </Grid.Column>
             <Grid.Column width="8" className="tagContainer" floated="right" textAlign='left'>
               <h4 className="tagline">

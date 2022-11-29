@@ -4,11 +4,11 @@ import blackLogo from '../../../logo.svg'
 import {Link} from 'react-router-dom'
 import ServiceModal from "../../service-modal/service-modal.component";
 
-const Home = ({buttons, open, setOpen})=>{
+const Home = ({setShopifyActive, buttons, open, setOpen})=>{
     return(
     <Grid className="homeContainer" >
     <Grid.Row centered className="homeContentContainer">
-        <Grid.Column  mobile= "14" tablet={7} computer={7} verticalAlign='middle'>
+        <Grid.Column  width= "14" verticalAlign='middle'>
           <Header textAlign='left' className='logoText' verticalAlign='middle'> <img src={blackLogo}></img></Header>
 
           <Segment className='homeCopy'>
@@ -36,7 +36,15 @@ const Home = ({buttons, open, setOpen})=>{
                     <Link to={`/${button.buttonName.toLowerCase()}`}>
                         <Button
                             fluid
-                            className='blackHomeButton'> 
+                            className='blackHomeButton'
+                            onClick={()=>{
+                                if(button.buttonName == 'Shop'){
+                                    setShopifyActive(true);
+                                    console.log("activating shopify");
+                                }else{
+                                    setShopifyActive(false);
+                                }}
+                            }>
                             {button.buttonName}
                         </Button>
                     </Link>
