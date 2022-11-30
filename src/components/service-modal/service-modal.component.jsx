@@ -7,7 +7,7 @@ const returnModalType = (modalType)=>{
     if(modalType == 'calendar'){
         return <Calendly/>
     }else{
-        return <div>sucks2suck</div>
+        return <iframe className='contactUs' src="https://us18.list-manage.com/contact-form?u=9cd7b0622c5f0aeecf9b72cb3&form_id=3973ba7d27bde7a94daa62bad3ea97e3"></iframe>
     }
 }
 const ServiceModal = ({open, setOpen, type, callToAction})=>{

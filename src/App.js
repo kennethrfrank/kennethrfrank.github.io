@@ -55,6 +55,7 @@ const App = ()=>{
     link: "https://spacelooters.com"}
     );
     const [open, setOpen] = useState(false);
+    const [open1, setOpen1] = useState(false);
 
     useEffect(()=>{
       fetch('https://api.opensea.io/api/v1/assets?owner=0x848AE001e8378A7409337453C1D8f5B779945578&order_direction=desc&limit=200&include_orders=false')
@@ -110,7 +111,7 @@ const App = ()=>{
                        
 
                         <ServiceModal open={open} setOpen={setOpen} type='calendar' callToAction='Book a Service'></ServiceModal>
-                        <ServiceModal open={open} setOpen={setOpen} type='mail' callToAction='Contact Us'></ServiceModal>
+                        <ServiceModal open={open1} setOpen={setOpen1} type='mail' callToAction='Contact Us'></ServiceModal>
 
                         <ContentSegment segment={spaceLooters}/>
                         
