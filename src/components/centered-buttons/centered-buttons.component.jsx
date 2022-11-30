@@ -27,19 +27,22 @@ import './centered-buttons.styles.css'
 
 const CenteredButtons = ({socials}) => {
 return(
-  <Grid.Row centered columns={socials.length+1} >
+  <Grid className='topLogoRow'>
+    <Grid.Row centered columns={socials.length + 1} className="socialButtons">
 
-         
-            {socials.map((social)=>{
-              
-              return(
-                <Grid.Column key={social.platform} className="theButtons" textAlign="center">
-                  <Button fluid className="blackButton" href={social.link} icon={social.platform}></Button>
-                </Grid.Column>
-              );
-            })}
-           
-          </Grid.Row>
+
+      {socials.map((social) => {
+
+        return (
+          <Grid.Column key={social.platform} className="theButtons" textAlign="center">
+            <Button fluid className="blackButton" href={social.link} icon={social.platform}></Button>
+          </Grid.Column>
+        );
+      })}
+
+    </Grid.Row>
+  </Grid>
+
 )
 }
 

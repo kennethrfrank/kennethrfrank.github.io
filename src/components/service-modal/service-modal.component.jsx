@@ -17,11 +17,10 @@ const ServiceModal = ({open, setOpen, type, callToAction})=>{
         onClose={()=> setOpen(false)}
         onOpen={()=> setOpen(true)}
         open = {open}
-        trigger={<Button className='modalButton' icon fluid><Icon name={`${type} alternate`}/> {callToAction}</Button>}>
+        trigger={<Button className='blackHomeButton' fluid> Services </Button>}>
           <Modal.Content>
             {returnModalType(type)}
           </Modal.Content>
-
       </Modal>
     )
 }
