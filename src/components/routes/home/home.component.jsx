@@ -1,10 +1,10 @@
-import {Grid, Segment, Header, Button} from "semantic-ui-react";
+import {Grid, Segment, Header, Button, ButtonOr} from "semantic-ui-react";
 import './home.styles.scss';
 import blackLogo from '../../../logo.svg'
 import {Link} from 'react-router-dom'
 import ServiceModal from "../../service-modal/service-modal.component";
 
-const Home = ({setShopifyActive, buttons, open, setOpen})=>{
+const Home = ({setShopifyActive, buttons})=>{
     return(
     <Grid className="homeContainer" >
     <Grid.Row centered className="homeContentContainer">
@@ -28,8 +28,9 @@ const Home = ({setShopifyActive, buttons, open, setOpen})=>{
                 );
 
             }else if(button.modal){
+                console.log(button.action);
                 return(
-                    <ServiceModal  open={open} setOpen={setOpen}/>
+                    <ServiceModal open={button.openModal} setOpen={button.setOpenModal} type={button.action} name={button.buttonName}/>
                 )
             }else{
                 return (

@@ -16,4 +16,6 @@
 .contactUs{
     width: 100% !important;
     height: 80vh !important;
+    border: none !important;
+    border-radius: 10px; 
 }

@@ -88,9 +88,10 @@ const App = ()=>{
   
      
   const homeButtons = [{buttonName: "Projects", action: "projects"},
-  {buttonName: "Shop", action: "shopify"},
-  {buttonName: "Consulting", action: "calendly", modal: true}, 
- {buttonName: "Gallery", action: "gallery"}];
+  {buttonName: "Services", action: "calendar", modal: true, openModal: open, setOpenModal: setOpen},
+  {buttonName: "Contact Us", action: "contactus", modal: true, openModal: open1, setOpenModal: setOpen1},
+ {buttonName: "Gallery", action: "gallery"},
+ {buttonName: "Shop", action: "shopify"}];
 
 
 
