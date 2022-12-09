@@ -9,11 +9,13 @@ import { Route, Routes } from 'react-router-dom';
 import Projects from './components/routes/projects/projects.component';
 import Gallery from './components/routes/gallery/gallery.component';
 import Shop from './components/routes/shop/shop.component';
+import Content from './components/content/content.component';
 import $ from 'jquery'
 
 const App = ()=>{
     const [searchField, setSearchField] = useState('');
     const [nfts, setNfts] = useState([]);
+    const [videos, setVideos] = useState([]);
     const socials = [
       { platform: "game",
       link: "http://nclyne.gallery"},
@@ -67,6 +69,11 @@ const App = ()=>{
     }, []); // get data from opensea
 
     useEffect(()=>{
+      fetch('https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCwZA4pIiYSJO9yrXOlcUMfQ&order=date&key=AIzaSyDlI39i18q3VsuxcpwN4viDTitXUReCZkQ')
+      .then(response => response.json()).then((vids) => setVideos(vids.items));
+    }, []);//API : AIzaSyDlI39i18q3VsuxcpwN4viDTitXUReCZkQ
+
+    useEffect(()=>{
       const processedNfts = nfts.filter((nft) => {
         if (nft.collection.external_url) {
           var putEmIn = nft.collection.external_url
@@ -91,7 +98,8 @@ const App = ()=>{
   {buttonName: "Services", action: "calendar", modal: true, openModal: open, setOpenModal: setOpen},
   {buttonName: "Contact Us", action: "contactus", modal: true, openModal: open1, setOpenModal: setOpen1},
  {buttonName: "Gallery", action: "gallery"},
- {buttonName: "Shop", action: "shopify"}];
+ {buttonName: "Shop", action: "shopify"},
+{buttonName: "Content", action: "content"}];
 
 
 
@@ -119,6 +127,7 @@ const App = ()=>{
             nclyneNfts={nclyneNfts} />}/>
             <Route path="gallery" element={<Gallery />}/>
             <Route path="shop" element={<Shop shopifyStyle={shopifyStyle}/>}/>
+            <Route path="content" element={<Content videos={videos}></Content>} />
           </Route>
         
         </Routes>
