@@ -22,11 +22,11 @@ const App = ()=>{
       { platform: "youtube",
       link: "https://www.youtube.com/channel/UCwZA4pIiYSJO9yrXOlcUMfQ"},
       { platform: "twitter",
-      link: "https://twitter.com/nclynenft"},
+      link: "https://twitter.com/nclyneart"},
       { platform: "instagram",
-      link: "https://instagram.com/nclynenft"},
+      link: "https://instagram.com/nclyneart"},
       { platform: "twitch",
-      link: "https://www.twitch.tv/nclynenft"},
+      link: "https://www.twitch.tv/nclyneart"},
       { platform: "discord",
         link: "https://discord.com/invite/QXrYuwzM24"}
     ];
