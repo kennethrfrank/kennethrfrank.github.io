@@ -15,7 +15,10 @@ import $ from 'jquery'
 const App = ()=>{
     const [searchField, setSearchField] = useState('');
     const [nfts, setNfts] = useState([]);
+
     const [videos, setVideos] = useState([]);
+    const [articles, setArticles] = useState([]);
+
     const socials = [
       { platform: "game",
       link: "http://nclyne.gallery"},
@@ -63,15 +66,21 @@ const App = ()=>{
       }
     }, [shopifyActive]);
 
+
     useEffect(()=>{
       fetch('https://api.opensea.io/api/v1/assets?owner=0x848AE001e8378A7409337453C1D8f5B779945578&order_direction=desc&limit=200&include_orders=false')
       .then(response => response.json()).then((assets) => setNfts(assets.assets));
     }, []); // get data from opensea
 
     useEffect(()=>{
-      fetch('https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCwZA4pIiYSJO9yrXOlcUMfQ&order=date&key=AIzaSyDlI39i18q3VsuxcpwN4viDTitXUReCZkQ')
+      fetch('https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCwZA4pIiYSJO9yrXOlcUMfQ&maxResults=3&order=date&key=AIzaSyDlI39i18q3VsuxcpwN4viDTitXUReCZkQ')
       .then(response => response.json()).then((vids) => setVideos(vids.items));
     }, []);//API : AIzaSyDlI39i18q3VsuxcpwN4viDTitXUReCZkQ
+
+    useEffect(()=>{
+      fetch('https://v1.nocodeapi.com/frnk/medium/WYojXOwHqYlmoYft')
+      .then(response => response.json()).then((items) => setArticles(items));
+    }, []);
 
     useEffect(()=>{
       const processedNfts = nfts.filter((nft) => {
@@ -127,7 +136,7 @@ const App = ()=>{
             nclyneNfts={nclyneNfts} />}/>
             <Route path="gallery" element={<Gallery />}/>
             <Route path="shop" element={<Shop shopifyStyle={shopifyStyle}/>}/>
-            <Route path="content" element={<Content videos={videos}></Content>} />
+            <Route path="content" element={<Content videos={videos} articles={articles}></Content>} />
           </Route>
         
         </Routes>
