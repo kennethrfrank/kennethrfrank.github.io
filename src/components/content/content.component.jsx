@@ -7,7 +7,7 @@ const Content = ({videos, articles})=>{
     return(
     <Grid stackable centered className='contentGrid'>
         
-       
+        <Grid.Row stretched>
         <Grid.Column width={5} className='video-container' textAlign="center" verticalAlign='center'>
             <Header className='columnHeader'>Latest Videos</Header>
             <Grid centered stackable className='vidGrid'>
@@ -58,7 +58,7 @@ const Content = ({videos, articles})=>{
         </Grid.Column>
 
             
-       
+       </Grid.Row>
     </Grid>
     );
 };
