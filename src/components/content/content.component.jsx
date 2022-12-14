@@ -1,7 +1,7 @@
 import {Grid, Embed, Segment, Header} from 'semantic-ui-react';
 import './content.styles.scss';
 import parse from 'html-react-parser';
-import nclyneblog from './nclyne_blog.svg';
+import nclyneblog from './nclyne_blog.png';
 
 const Content = ({videos, articles})=>{
     return(
