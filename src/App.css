@@ -128,3 +128,6 @@ a:hover{
     transform: rotate(360deg);
   }
 }
+html, .root{
+  overflow-x: hidden;
+}

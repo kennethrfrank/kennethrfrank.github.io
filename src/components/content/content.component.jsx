@@ -64,3 +64,5 @@ const Content = ({videos, articles})=>{
 };
 
 export default Content;
+
+//From Teji SPA -- Body min-height 100% - child height 100vh
