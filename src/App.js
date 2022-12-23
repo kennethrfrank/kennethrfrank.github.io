@@ -107,7 +107,7 @@ const App = ()=>{
   {buttonName: "Services", action: "calendar", modal: true, openModal: open, setOpenModal: setOpen},
   {buttonName: "Contact Us", action: "contactus", modal: true, openModal: open1, setOpenModal: setOpen1},
  {buttonName: "Gallery", action: "gallery"},
- {buttonName: "Shop", action: "shopify", href:"https://nclyne.shop"},
+ {buttonName: "Shop", action: "shopify", href: "https://nclyne.shop"},
 {buttonName: "Content", action: "content"}];
 
 
@@ -136,6 +136,7 @@ const App = ()=>{
             nclyneNfts={nclyneNfts} />}/>
             <Route path="gallery" element={<Gallery />}/>
             <Route path="content" element={<Content videos={videos} articles={articles}></Content>} />
+          
           </Route>
         
         </Routes>
