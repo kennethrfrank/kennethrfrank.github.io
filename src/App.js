@@ -135,7 +135,6 @@ const App = ()=>{
             onSearchChange={onSearchChange}
             nclyneNfts={nclyneNfts} />}/>
             <Route path="gallery" element={<Gallery />}/>
-            <Route path="shop" element={<Shop shopifyStyle={shopifyStyle}/>}/>
             <Route path="content" element={<Content videos={videos} articles={articles}></Content>} />
           </Route>
         
