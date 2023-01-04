@@ -37,15 +37,7 @@ const Home = ({setShopifyActive, buttons})=>{
                     <Link to={`/${button.buttonName.toLowerCase()}`}>
                         <Button
                             fluid
-                            className='blackHomeButton'
-                            onClick={()=>{
-                                if(button.buttonName == 'Shop'){
-                                    setShopifyActive(true);
-                                    console.log("activating shopify");
-                                }else{
-                                    setShopifyActive(false);
-                                }}
-                            }>
+                            className='blackHomeButton'>
                             {button.buttonName}
                         </Button>
                     </Link>

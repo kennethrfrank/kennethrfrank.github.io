@@ -53,6 +53,8 @@ const App = ()=>{
     const [open, setOpen] = useState(false);
     const [open1, setOpen1] = useState(false);
 
+    const[gallery, setGallery] = useState("nclyne");
+
     const[shopifyActive, setShopifyActive] = useState(false);
     const[shopifyStyle, setShopifyStyle] = useState({display: "none"});
 
@@ -134,7 +136,9 @@ const App = ()=>{
             curatedByNclyne={curatedByNclyne}
             onSearchChange={onSearchChange}
             nclyneNfts={nclyneNfts} />}/>
-            <Route path="gallery" element={<Gallery />}/>
+            <Route path="gallery" element={<Gallery gallery={gallery} setGallery={setGallery}/>}>
+
+            </Route>
             <Route path="content" element={<Content videos={videos} articles={articles}></Content>} />
           
           </Route>
