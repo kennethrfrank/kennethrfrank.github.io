@@ -1,4 +1,4 @@
-import logo from './logosvg.svg'
+import logo from './TSU_logo.gif'
 import { useEffect, useState } from 'react'
 import './App.css';
 import React from 'react';
@@ -21,39 +21,39 @@ const App = ()=>{
 
     const socials = [
       { platform: "game",
-      link: "http://nclyne.gallery"},
-      { platform: "medium",
-      link: "https://medium.com/nclyne"},
-      { platform: "youtube",
-      link: "https://www.youtube.com/channel/UCwZA4pIiYSJO9yrXOlcUMfQ"},
-      { platform: "twitter",
-      link: "https://twitter.com/nclyneart"},
-      { platform: "instagram",
-      link: "https://instagram.com/nclyneart"},
-      { platform: "twitch",
-      link: "https://www.twitch.tv/nclyneart"},
-      { platform: "discord",
-        link: "https://discord.com/invite/QXrYuwzM24"}
+      link: "https://tryhackme.com/", text: "HackMe"},
+      { platform: "game",
+      link: "https://www.hackthebox.com/", text: "HackTheBox"},
+      { platform: "game",
+      link: "https://hackviser.com/", text: "HackViser"},
+      { platform: "game",
+      link: "https://store.steampowered.com/app/365450/Hacknet/", text: "Hacknet"},
+      { platform: "mail",
+      email: "kfrank1@my.tnstate.edu", name: "Kenny Frank", subject: "SR Project Inquiry 2025", text: "Contact - Kenny Frank"},
+      { platform: "mail",
+      email: "jfinch10@my.tnstate.edu", name: "Joshua Finch", subject: "SR Project Inquiry 2025", text: "Contact - Joshua Finch"},
+      { platform: "mail",
+        email: "jwebst20@my.tnstate.edu", name: "Jayden Webster", subject: "SR Project Inquiry 2025", text: "Contact - Jayden Webster"}
     ];
     
     const [nclyneNfts, setNclyneNfts] = useState(nfts);
     const curatedByNclyne =
-      {title: "Curated by Nclyne",
-       subCopy: ["An art initiative introducing select talent to blockchain markets.",
-     "Each limited series is in collaboration with a rising artist who receives 100% of the primary sales commission."],}
+      {title: "Where's the PHISH?",
+       subCopy: ["Type the number of the suspected PHISH attempt into the search bar to see if you can find it!",
+     "Questions get more difficult with each round"],}
     ;
     const spaceLooters =
-      {title: "LILKOOL's SPACE LOOTERS",
-      img: 'looterspromo.gif',
-       subCopy: ["LIL Aliens. Obsessively collecting loot.", 
-     "Web3 access to KOOL art, fashion and experiences.", "MINTING NOW!"],
-    link: "https://spacelooters.com"}
+      {title: "TSU TIGER PHISH HUNT",
+      img: 'tiger.gif',
+       subCopy: ["Tiger Phish Hunt is an educational game to help you identify phishing attempts.", 
+     "BE THE TIGER; FIND THE PHISH Attempt.", "Or GET PHISHED!"],
+    link: ""}
     ;
 
     const [open, setOpen] = useState(false);
     const [open1, setOpen1] = useState(false);
 
-    const[gallery, setGallery] = useState("nclyne");
+    const[gallery, setGallery] = useState("rift-mark-2");
 
     const[shopifyActive, setShopifyActive] = useState(false);
     const[shopifyStyle, setShopifyStyle] = useState({display: "none"});
@@ -70,47 +70,93 @@ const App = ()=>{
 
 
     useEffect(()=>{
-      fetch('https://api.opensea.io/api/v1/assets?owner=0x848AE001e8378A7409337453C1D8f5B779945578&order_direction=desc&limit=200&include_orders=false')
-      .then(response => response.json()).then((assets) => setNfts(assets.assets));
+      (async () => {
+        try {
+          console.log("fetching pics");
+          const response = await fetch('https://picsum.photos/v2/list');
+          if (!response.ok) {
+            console.error('pics fetch failed with status', response.status);
+            setNfts([]);
+            return;
+          }
+          const assets = await response.json();
+          setNfts(assets || []);
+          console.log("got pics" )
+        } catch (err) {
+          console.error('Failed to fetch pics', err);
+          setNfts([]);
+        }
+      })();
     }, []); // get data from opensea
 
     useEffect(()=>{
-      fetch('https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCwZA4pIiYSJO9yrXOlcUMfQ&maxResults=3&order=date&key=AIzaSyDlI39i18q3VsuxcpwN4viDTitXUReCZkQ')
-      .then(response => response.json()).then((vids) => setVideos(vids.items));
+      (async () => {
+        try {
+          const response = await fetch('https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCwZA4pIiYSJO9yrXOlcUMfQ&maxResults=3&order=date&key=AIzaSyDlI39i18q3VsuxcpwN4viDTitXUReCZkQ');
+          if (!response.ok) {
+            console.error('YouTube fetch failed with status', response.status);
+            setVideos([]);
+            return;
+          }
+          const vids = await response.json();
+          setVideos((vids && vids.items) || []);
+        } catch (err) {
+          console.error('Failed to fetch YouTube videos', err);
+          setVideos([]);
+        }
+      })();
     }, []);//API : AIzaSyDlI39i18q3VsuxcpwN4viDTitXUReCZkQ
 
     useEffect(()=>{
-      fetch('https://v1.nocodeapi.com/frnk/medium/WYojXOwHqYlmoYft')
-      .then(response => response.json()).then((items) => setArticles(items));
-    }, []);
+      (async () => {
+        try {
+          const response = await fetch('https://v1.nocodeapi.com/frnk/medium/WYojXOwHqYlmoYft');
+          if (!response.ok) {
+            console.error('Medium fetch failed with status', response.status);
+            setArticles([]);
+            return;
+          }
+          const items = await response.json();
+            setArticles(items || []);
+          } catch (err) {
+            console.error('Failed to fetch Medium articles', err);
+            setArticles([]);
+          }
+          })();
+        }, []);
 
-    useEffect(()=>{
-      const processedNfts = nfts.filter((nft) => {
-        if (nft.collection.external_url) {
-          var putEmIn = nft.collection.external_url
-            .includes('nclyne')
-            && (nft.name
-              .toLocaleLowerCase()
+    useEffect(() => {
+      const handler = setTimeout(() => {
+        const processedNfts = nfts.filter((pic) => {
+         
+          if (pic.url) {
+            var putEmIn = pic.author
+              .toLowerCase()
               .includes(searchField)
-              || nft.description
-                .toLocaleLowerCase()
-                .includes(searchField));
-          return putEmIn;
-        } else {
-          return false;
-        }      
-      }); 
-      setNclyneNfts(processedNfts);
+              || pic.id.toString()
+              .includes(searchField);
+            return putEmIn;
+          } else {
+            return false;
+          }
+        });
+        setNclyneNfts(processedNfts);
+      }, 300); // 300ms debounce
+
+      return () => {
+        clearTimeout(handler);
+      };
     }, [nfts, searchField]);
 
   
      
-  const homeButtons = [{buttonName: "Projects", action: "projects"},
-  {buttonName: "Services", action: "calendar", modal: true, openModal: open, setOpenModal: setOpen},
-  {buttonName: "Contact Us", action: "contactus", modal: true, openModal: open1, setOpenModal: setOpen1},
- {buttonName: "Gallery", action: "gallery"},
- {buttonName: "Shop", action: "shopify", href: "https://nclyne.shop"},
-{buttonName: "Content", action: "content"}];
+  const homeButtons = [{buttonName: "Gallery", action: "gallery", altname: "OnCyber Gallery Scavenger Hunts"},
+    {buttonName: "Projects", action: "projects", altname: "Tiger Phish Hunt"}
+//   {buttonName: "Services", action: "calendar", modal: true, openModal: open, setOpenModal: setOpen},
+//   {buttonName: "Contact Us", action: "contactus", modal: true, openModal: open1, setOpenModal: setOpen1},
+//  {buttonName: "Shop", action: "shopify", href: "https://nclyne.shop"},
+// {buttonName: "Content", action: "content"}
+];
 
 
 

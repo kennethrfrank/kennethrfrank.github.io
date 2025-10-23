@@ -1,12 +1,16 @@
 
 body{
   overflow-x: hidden;
-  background-image: url("./bg.gif") !important;
+ 
   background-size: cover !important;
   background-color: #020202 !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
    background-color: #020202 !important;
+ }
+
+ #root{
+  height: 100%;
  }
 /* #root{
   

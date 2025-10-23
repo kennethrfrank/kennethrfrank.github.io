@@ -49,31 +49,26 @@ const ContentSlider = ({content})=>{
             >
               <Image 
               wrapped
-              src={item.image_url}
+              src={"https://picsum.photos/id/"+item.id+"/1000/1000/?blur=2"}
               centered
               verticalAlign='middle'
               className='sliderImage'
               onClick={()=>{
                 console.log("click");
-                window.location.assign(item.permalink);
+                window.location.assign(item.url);
               }}
               ></Image>
               <Header attached="bottom" 
-              className='sliderHeader'>{item.name}</Header>
+              className='sliderHeader'>{item.id}</Header>
 
                <Segment attached="top" className='artistDetails'>
-                    {item.description}
+                    {item.author}
                 </Segment>
                 <Button fluid className="sliderButton" onClick={
                     ()=>{
-                      window.location.assign(item.permalink);
+                      window.location.assign(item.url);
                     }
-                  }> Support {item.traits.map((trait)=>{
-                    if (trait.trait_type.includes("Artist")){
-                    return trait.value } else{
-                      return null
-                    }
-                  })}</Button>
+                  }> PHISHY </Button>
  
 
             </Grid.Column>

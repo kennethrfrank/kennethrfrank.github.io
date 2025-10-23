@@ -7,12 +7,12 @@ const Gallery = ({gallery, setGallery}) =>{
             <Grid.Column width={15}>
                 <Button className="blackGButton" fluid onClick={
                     ()=>{
-                        if(gallery !== "nclyne"){
-                            setGallery("nclyne");
+                        if(gallery !== "rift-mark-2"){
+                            setGallery("rift-mark-2");
                         }
                     }
                 }>
-                    Nclyne Legacy
+                    ROOM 1 - Secure Facility Scavenger Hunt
                 </Button>
                 <Button className="blackGButton" fluid onClick={
                     ()=>{
@@ -22,11 +22,19 @@ const Gallery = ({gallery, setGallery}) =>{
                         }
                     }
                 }>
-                    An Exploration in Digital Expression
+                    ROOM 2 - Privacy Identity & Expression in the Digital Age
                 </Button>
-                <Button className="blackGButton" fluid href="http://nclyne.gallery">
-                    Nclyne Voxels HQ
+                <Button className="blackGButton" fluid onClick={
+                    ()=>{
+                        if(gallery !== "nclyne"){
+                            console.log("changing");
+                            setGallery("nclyne");
+                        }
+                    }
+                }>
+                    ROOM 3 - Let's Talk Encryption
                 </Button>
+                
                 <iframe title="onCyber" className="onCyberGallery" src={`https://oncyber.io/${gallery}`}>
 
                 </iframe> 

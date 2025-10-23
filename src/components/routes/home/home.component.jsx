@@ -1,6 +1,6 @@
 import {Grid, Segment, Header, Button, ButtonOr} from "semantic-ui-react";
 import './home.styles.scss';
-import blackLogo from '../../../logo.svg'
+import blackLogo from '../../../TSU_logo.gif'
 import {Link} from 'react-router-dom'
 import ServiceModal from "../../service-modal/service-modal.component";
 
@@ -11,9 +11,9 @@ const Home = ({setShopifyActive, buttons})=>{
         <Grid.Column  width= "14" verticalAlign='middle'>
           <Header textAlign='left' className='logoText' verticalAlign='middle'> <img src={blackLogo}></img></Header>
 
-          <Segment className='homeCopy'>
-            <Header> Collective dedicated to rising talent and the proliferation of a global creative economy </Header>
-            <Header> Specializing in Web3 culture and strategy </Header>
+          <Segment className='homeCopy' textAlign="center">
+            <Header> Selection of CyberSecurity-Focused Educational Gaming Experiences </Header>
+            <Header> Curated by Joshua Finch, Jayden Webster and Kenneth Frank </Header>
           </Segment>
 
 
@@ -38,7 +38,7 @@ const Home = ({setShopifyActive, buttons})=>{
                         <Button
                             fluid
                             className='blackHomeButton'>
-                            {button.buttonName}
+                            {button.altname}
                         </Button>
                     </Link>
                     );

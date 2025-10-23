@@ -12,7 +12,7 @@ const SearchBox = ({onChangeHandler})=>{
                   icon='search' 
                   className="searchArtists" 
                   fluid 
-                  placeholder="Search Artists" 
+                  placeholder="Input suspected PHISH attempt ID..." 
                   onChange={onChangeHandler}/>
     );
 }
